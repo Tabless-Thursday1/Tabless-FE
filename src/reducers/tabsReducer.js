@@ -14,17 +14,29 @@ const initialState = {
 export const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_DATA_START:
-      return {};
+      return {
+        ...state,
+      };
     case GET_DATA_SUCCESS:
-      return {};
+      return {
+        ...state,
+      };
     case GET_DATA_FAILURE:
-      return {};
+      return {
+        ...state,
+      };
     case GET_DATA_WITH_AUTH_START:
-      return {};
+      return {
+        ...state,
+      };
     case GET_DATA_WITH_AUTH_SUCCESS:
-      return {};
+      return {
+        ...state,
+      };
     case GET_DATA_WITH_AUTH_FAILURE:
-      return {};
+      return {
+        ...state,
+      };
     default:
       if (state === initialState) return state;
       throw new Error(`${type} is not a valid type`);

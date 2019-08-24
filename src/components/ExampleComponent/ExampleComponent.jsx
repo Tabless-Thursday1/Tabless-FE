@@ -1,13 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './ExampleComponent.scss';
 
-function ExampleComponent() {
+function ExampleComponent({ exampleVariable }) {
+  const exampleText = `${exampleVariable} Component`;
+
   return (
     <>
-      <p className="example-component">Example Component</p>
+      <p className="example-component">{exampleText}</p>
     </>
   );
 }
 
-export default ExampleComponent;
+const mapStateToProps = ({
+  exampleVariable,
+}) => ({
+  exampleVariable,
+});
+
+export default connect(mapStateToProps, {})(ExampleComponent);

@@ -1,6 +1,9 @@
 import React from 'react';
+
+import './App.scss';
+
 import logo from './logo.svg';
-import './App.css';
+import ExampleComponent from './components/ExampleComponent';
 
 function App() {
   return (
@@ -8,7 +11,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit&nbsp;
+          <code>src/App.js</code>
+          &nbsp;and save to reload.
         </p>
         <a
           className="App-link"
@@ -18,6 +23,7 @@ function App() {
         >
           Learn React
         </a>
+        <ExampleComponent />
       </header>
     </div>
   );

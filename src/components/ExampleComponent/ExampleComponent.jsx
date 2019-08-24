@@ -3,12 +3,20 @@ import { connect } from 'react-redux';
 
 import './ExampleComponent.scss';
 
-function ExampleComponent({ exampleVariable }) {
+import { exampleFunction } from '../../actions';
+
+function ExampleComponent({ exampleVariable, click }) {
   const exampleText = `${exampleVariable} Component`;
 
   return (
     <>
-      <p className="example-component">{exampleText}</p>
+      <button
+        type="button"
+        className="example-component"
+        onClick={() => click()}
+      >
+        {exampleText}
+      </button>
     </>
   );
 }
@@ -19,4 +27,4 @@ const mapStateToProps = ({
   exampleVariable,
 });
 
-export default connect(mapStateToProps, {})(ExampleComponent);
+export default connect(mapStateToProps, { click: exampleFunction })(ExampleComponent);

@@ -5,6 +5,8 @@ export {
   GET_DATA_WITH_AUTH_START,
   GET_DATA_WITH_AUTH_SUCCESS,
   GET_DATA_WITH_AUTH_FAILURE,
+  EXAMPLE_ACTION,
   getData,
   getDataWithAuth,
+  exampleFunction,
 } from './tabsActions';

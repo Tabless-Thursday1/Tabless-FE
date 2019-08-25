@@ -1,4 +1,4 @@
-// media queries
+// media queries (this is implemented as mobile-first)
 @mixin tablet {
   @media (min-width: #{$tablet}) {
     @content;

@@ -1,9 +1,8 @@
-export const buildMapStateToProps = ({ propsShape }) => (state) => (Object
-  .keys(propsShape)
-  .reduce((acc, key) => {
-    acc[key] = state[key];
-    return acc;
-  }, {})
-);
+import { filterObject } from './filterObject';
+
+export const buildMapStateToProps = ({ propsShape }) => (state) => (filterObject({
+  sourceObject: state,
+  filter: propsShape,
+}));
 
 export default buildMapStateToProps;

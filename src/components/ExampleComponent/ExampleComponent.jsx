@@ -1,17 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './ExampleComponent.scss';
 
-function ExampleComponent({ exampleVariable }) {
+import { exampleFunction } from '../../actions';
+
+const ExampleComponent = ({ exampleVariable, click }) => {
   const exampleText = `${exampleVariable} Component`;
 
   return (
     <>
-      <p className="example-component">{exampleText}</p>
+      <button
+        type="button"
+        className="example-component"
+        onClick={() => click()}
+      >
+        {exampleText}
+      </button>
     </>
   );
-}
+};
+
+ExampleComponent.propTypes = {
+  exampleVariable: PropTypes.string,
+  click: PropTypes.func.isRequired,
+};
+
+ExampleComponent.defaultProps = {
+  exampleVariable: 'Default Text',
+};
 
 const mapStateToProps = ({
   exampleVariable,
@@ -19,4 +37,4 @@ const mapStateToProps = ({
   exampleVariable,
 });
 
-export default connect(mapStateToProps, {})(ExampleComponent);
+export default connect(mapStateToProps, { click: exampleFunction })(ExampleComponent);

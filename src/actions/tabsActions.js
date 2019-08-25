@@ -13,6 +13,7 @@ export const GET_DATA_FAILURE = 'GET_DATA_FAILURE';
 export const GET_DATA_WITH_AUTH_START = 'GET_DATA_WITH_AUTH_START';
 export const GET_DATA_WITH_AUTH_SUCCESS = 'GET_DATA_WITH_AUTH_SUCCESS';
 export const GET_DATA_WITH_AUTH_FAILURE = 'GET_DATA_WITH_AUTH_FAILURE';
+export const EXAMPLE_ACTION = 'EXAMPLE_ACTION';
 
 const buildThunkFactory = ({ restFunction }) => ({
   start,
@@ -46,4 +47,9 @@ export const getDataWithAuth = buildAxiosWithAuthThunk({
   success: GET_DATA_WITH_AUTH_SUCCESS,
   failure: GET_DATA_WITH_AUTH_FAILURE,
   restCallType: GET,
+});
+
+export const exampleFunction = () => ({
+  type: EXAMPLE_ACTION,
+  payload: 'Example Payload',
 });

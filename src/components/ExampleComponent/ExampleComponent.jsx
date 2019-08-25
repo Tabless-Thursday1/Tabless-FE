@@ -14,7 +14,7 @@ const ExampleComponent = ({ exampleVariable, click }) => {
       <button
         type="button"
         className="example-component"
-        onClick={() => click()}
+        onClick={click}
       >
         {exampleText}
       </button>

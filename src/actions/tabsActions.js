@@ -15,7 +15,7 @@ export const GET_DATA_WITH_AUTH_SUCCESS = 'GET_DATA_WITH_AUTH_SUCCESS';
 export const GET_DATA_WITH_AUTH_FAILURE = 'GET_DATA_WITH_AUTH_FAILURE';
 export const EXAMPLE_ACTION = 'EXAMPLE_ACTION';
 
-const buildThunkFactory = ({ restFunction }) => ({
+const buildThunkFactory = ({ restObject }) => ({
   start,
   success,
   failure,
@@ -24,7 +24,7 @@ const buildThunkFactory = ({ restFunction }) => ({
   (async () => {
     dispatch({ type: start });
     try {
-      const response = await restFunction()[restCallType](`${url}${query}`, data);
+      const response = await restObject[restCallType](`${url}${query}`, data);
       dispatch({ type: success, payload: response.data });
     } catch (error) {
       dispatch({ type: failure, payload: error.response });
@@ -33,7 +33,7 @@ const buildThunkFactory = ({ restFunction }) => ({
 };
 
 
-const buildAxiosThunk = buildThunkFactory({ restFunction: () => Axios });
+const buildAxiosThunk = buildThunkFactory({ restObject: Axios });
 export const getData = buildAxiosThunk({
   start: GET_DATA_START,
   success: GET_DATA_SUCCESS,
@@ -41,7 +41,7 @@ export const getData = buildAxiosThunk({
   restCallType: GET,
 });
 
-const buildAxiosWithAuthThunk = buildThunkFactory({ restFunction: axiosWithAuth });
+const buildAxiosWithAuthThunk = buildThunkFactory({ restObject: axiosWithAuth() });
 export const getDataWithAuth = buildAxiosWithAuthThunk({
   start: GET_DATA_WITH_AUTH_START,
   success: GET_DATA_WITH_AUTH_SUCCESS,

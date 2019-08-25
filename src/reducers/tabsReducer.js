@@ -5,7 +5,7 @@ import {
   GET_DATA_WITH_AUTH_START,
   GET_DATA_WITH_AUTH_SUCCESS,
   GET_DATA_WITH_AUTH_FAILURE,
-  EXAMPLE_ACTION,
+  EXAMPLE_TYPE,
 } from '../actions';
 
 const initialState = {
@@ -38,7 +38,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
       };
-    case EXAMPLE_ACTION:
+    case EXAMPLE_TYPE:
       return {
         ...state,
         exampleVariable: payload,

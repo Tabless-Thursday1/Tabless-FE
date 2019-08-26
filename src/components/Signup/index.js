@@ -1,3 +1,3 @@
-import Signup from './Signup';
+import Signup from './SignupComponent';
 
 export default Signup;

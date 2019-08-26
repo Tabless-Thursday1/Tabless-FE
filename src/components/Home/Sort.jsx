@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const sortedCategories = [];
 const sort = (tabs) => {
   tabs.forEach((tab) => {
@@ -6,6 +5,7 @@ const sort = (tabs) => {
       let found = false;
       let foundIndex = 0;
 
+      // eslint-disable-next-line consistent-return
       sortedCategories.forEach((indexedCats, index) => {
         if (indexedCats.name === category) {
           found = true;

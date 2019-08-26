@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react';
 import { Collapse, Button } from 'antd';
 import './Home.scss';

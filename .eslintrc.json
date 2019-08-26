@@ -23,5 +23,6 @@
         "jest"
     ],
     "rules": {
+        "linebreak-style": 0
     }
 }

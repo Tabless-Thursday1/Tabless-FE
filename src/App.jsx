@@ -7,12 +7,12 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import FormikLoginForm from './components/Login'
 import FormikSignupForm from './components/Signup'
 import PrivateRoute from './utils/PrivateRoute'
-import NavTab from "./Components/NavTab";
-import Tab1 from "./Components/TabComponents/tab1";
-import Tab2 from "./Components/TabComponents/tab2";
-import Tab3 from "./Components/TabComponents/tab3";
-import Tab4 from "./Components/TabComponents/tab4";
-import WelcomePage from "./Components/WelcomePage";
+import NavTab from "./components/NavBarTabs/NavTabLinks/NavTab";
+import Tab1 from "./components/NavBarTabs/Tab1/tab1";
+import Tab2 from "./components/NavBarTabs/Tab2/tab2";
+import Tab3 from "./components/NavBarTabs/Tab3/tab3";
+import Tab4 from "./components/NavBarTabs/Tab4/tab4";
+import WelcomePage from "./components/NavBarTabs/HomePage/HomePage";
 
 function App() {
   return (

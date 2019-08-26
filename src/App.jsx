@@ -1,18 +1,17 @@
 import React from 'react';
 import './App.css';
 import { Route } from "react-router-dom";
-import NavTab from "./Components/NavTab";
-import Tab1 from "./Components/TabComponents/tab1";
-import Tab2 from "./Components/TabComponents/tab2";
-import Tab3 from "./Components/TabComponents/tab3";
-import Tab4 from "./Components/TabComponents/tab4";
-import WelcomePage from "./Components/WelcomePage";
+import HomePage from "./components/NavBar_Tabs/HomePage/home_page";
+import Tab1 from "./components/NavBar_Tabs/Tab1/tab1";
+import Tab2 from "./components/NavBar_Tabs/Tab2/tab2";
+import Tab3 from "./components/NavBar_Tabs/Tab3/tab3";
+import Tab4 from "./components/NavBar_Tabs/Tab4/tab4";
 
 function App() {
   return (
     <div className="App">
     <NavTab/>
-      <Route exact path="/" component={WelcomePage}/>
+      <Route exact path="/" component={HomePage}/>
       <Route path="/tab1" component={Tab1}/>
       <Route path="/tab2" component={Tab2}/>
       <Route path="/tab3" component={Tab3}/>

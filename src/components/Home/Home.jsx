@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Collapse } from 'antd';
+import "./Home.scss";
 
 const Home = () => {
     /* Object shape: REQUIRES SORTING ALL DATA
@@ -49,6 +50,7 @@ const Home = () => {
                         if (indexedCats.name == category) {
                             found = true;
                             foundIndex = index;
+                            return;
                         }
                     });
                     if (found) {
@@ -71,15 +73,17 @@ const Home = () => {
     }, [])
 
     const { Panel } = Collapse;
+    let text = "hi";
     if (newSort.length == 0) {
         return(<h1>Loading...</h1>)
     }
     return (
-            <div>
+            <div className="tabs">
             {newSort.map((category) => 
-                <Collapse>
-                {category.tabs.map((tab) => 
-                    <Panel header={category.name}><p>{tab.description}</p></Panel>
+                <Collapse className="category-card">
+                <h2>{category.name}</h2>
+                {category.tabs.map((tab,index) => 
+                    <Panel header={tab.url} key={index}><p>{tab.description}</p></Panel>
                 )}
                 </Collapse>
             )}

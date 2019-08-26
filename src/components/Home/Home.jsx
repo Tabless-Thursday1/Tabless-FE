@@ -50,7 +50,7 @@ const Home = () => {
                     let foundIndex = 0;
 
                     sortedCategories.forEach((indexedCats, index) => {
-                        if (indexedCats.name == category) {
+                        if (indexedCats.name === category) {
                             found = true;
                             foundIndex = index;
                             return;
@@ -75,8 +75,7 @@ const Home = () => {
     }, [])
 
     const { Panel } = Collapse;
-    let text = "hi";
-    if (newSort.length == 0) {
+    if (newSort.length === 0) {
         return(<h1>Loading...</h1>)
     }
     return (
@@ -91,7 +90,7 @@ const Home = () => {
                     <Panel header={tab.name} key={index}>
                         <div className="panel-text">
                             <p>Description: {tab.description}</p>
-                            <p><a href={tab.url} target="_blank">URL</a></p>
+                            <p><a href={tab.url} rel="noopener noreferrer" target="_blank">URL</a></p>
                             <Button type="link" icon="edit" size="small" className="edit">Edit</Button>
                             <Button type="danger" icon="delete" size="small">Delete</Button>
                         </div>

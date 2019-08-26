@@ -1,0 +1,46 @@
+@import '../../scss/1-utils/#index';
+.tabs {
+    display:flex;
+    width:80%;
+    margin:auto;
+    position:absolute;
+    top: 20%;
+}
+.category-card {
+    width:35%;
+    margin:10px;
+    align-self:flex-start;
+}
+
+.title {
+    display:flex;
+    justify-content: space-between;
+    margin:10px;
+    h2 {
+        text-transform: capitalize;
+    }
+}
+
+.panel-text {
+    padding-left:15px;
+    & > * {
+        margin:5px;
+    }
+}
+
+.edit {
+    color:white;
+    background-color:#faad14;
+    &:hover{
+        background-color:#ffc53d;
+        color:white;
+    }
+}
+
+.add {
+    color:#389e0d;
+    &:hover {
+        color: #73d13d;
+    }
+}
+

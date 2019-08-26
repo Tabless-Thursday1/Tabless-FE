@@ -1,30 +1,22 @@
 import React from 'react';
-
-import './App.scss';
-
-import logo from './logo.svg';
-import ExampleComponent from './components/ExampleComponent';
+import './App.css';
+import { Route } from "react-router-dom";
+import NavTab from "./Components/NavTab";
+import Tab1 from "./Components/TabComponents/tab1";
+import Tab2 from "./Components/TabComponents/tab2";
+import Tab3 from "./Components/TabComponents/tab3";
+import Tab4 from "./Components/TabComponents/tab4";
+import WelcomePage from "./Components/WelcomePage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit&nbsp;
-          <code>src/App.js</code>
-          &nbsp;and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <ExampleComponent />
-      </header>
+    <NavTab/>
+      <Route exact path="/" component={WelcomePage}/>
+      <Route path="/tab1" component={Tab1}/>
+      <Route path="/tab2" component={Tab2}/>
+      <Route path="/tab3" component={Tab3}/>
+      <Route path="/tab4" component={Tab4}/> 
     </div>
   );
 }

@@ -64,7 +64,7 @@ const Home = () => {
               <div className="panel-text">
                 <p>
                   Description:
-                  {tab.description}
+                  {` ${tab.description}`}
                 </p>
                 <p><a href={tab.url} rel="noopener noreferrer" target="_blank">URL</a></p>
                 <Button type="link" icon="edit" size="small" className="edit">Edit</Button>

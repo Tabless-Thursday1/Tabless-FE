@@ -12,7 +12,7 @@ import PrivateRoute from './utils/PrivateRoute'
 function App() {
   return (
     <Router>
-    <div className="App">
+    <div>
       <header className="App-header">
         <Home />
       </header>

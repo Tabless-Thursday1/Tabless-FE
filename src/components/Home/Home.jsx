@@ -32,7 +32,8 @@ const Home = () => {
             private: false,
             description: "it's facebook",
             categories: [
-              'search'
+              'search',
+              'chicken'
             ],
         },
       ];
@@ -54,7 +55,6 @@ const Home = () => {
                         }
                     });
                     if (found) {
-                        let newTabs = sortedCategories[foundIndex].tabs.push(tab);
                         //setSort([...sortedCategories, {name: category, tabs: newTabs}]);
                         sortedCategories[foundIndex].tabs.push(tab);
                     } else {

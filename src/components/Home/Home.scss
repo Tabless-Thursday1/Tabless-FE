@@ -1,0 +1,12 @@
+@import '../../scss/1-utils/#index';
+
+.tabs {
+    display:flex;
+    width:80%;
+    margin:auto;
+}
+.category-card {
+    width:35%;
+    margin:10px;
+    align-self:flex-start;
+}

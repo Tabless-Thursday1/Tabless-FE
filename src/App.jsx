@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import Home from "./components/Home/";
 import ExampleComponent from './components/ExampleComponent';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import FormikLoginForm from './components/Login'
 import FormikSignupForm from './components/Signup'
 import PrivateRoute from './utils/PrivateRoute'

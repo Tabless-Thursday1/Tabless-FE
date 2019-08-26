@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Collapse } from 'antd';
+import { Collapse, Button} from 'antd';
 import "./Home.scss";
 
 const Home = () => {
@@ -19,7 +19,8 @@ const Home = () => {
     */
     const dummyData = [
         {
-          url: 'www.google.com',
+          name: "Google",
+          url: 'https://www.google.com',
           private: false,
           description: "it's google",
           categories: [
@@ -28,7 +29,8 @@ const Home = () => {
           ],
         },
         {
-            url: 'www.facebook.com',
+            name: "Facebook",
+            url: 'https://www.facebook.com',
             private: false,
             description: "it's facebook",
             categories: [
@@ -48,7 +50,7 @@ const Home = () => {
                     let foundIndex = 0;
 
                     sortedCategories.forEach((indexedCats, index) => {
-                        if (indexedCats.name == category) {
+                        if (indexedCats.name === category) {
                             found = true;
                             foundIndex = index;
                             return;
@@ -73,17 +75,26 @@ const Home = () => {
     }, [])
 
     const { Panel } = Collapse;
-    let text = "hi";
-    if (newSort.length == 0) {
+    if (newSort.length === 0) {
         return(<h1>Loading...</h1>)
     }
     return (
             <div className="tabs">
             {newSort.map((category) => 
                 <Collapse className="category-card">
-                <h2>{category.name}</h2>
+                <div className="title">
+                    <h2>{category.name}</h2>
+                    <Button type="link" icon="plus" size="small" className="add">Add new tab</Button>
+                </div>
                 {category.tabs.map((tab,index) => 
-                    <Panel header={tab.url} key={index}><p>{tab.description}</p></Panel>
+                    <Panel header={tab.name} key={index}>
+                        <div className="panel-text">
+                            <p>Description: {tab.description}</p>
+                            <p><a href={tab.url} rel="noopener noreferrer" target="_blank">URL</a></p>
+                            <Button type="link" icon="edit" size="small" className="edit">Edit</Button>
+                            <Button type="danger" icon="delete" size="small">Delete</Button>
+                        </div>
+                        </Panel>
                 )}
                 </Collapse>
             )}

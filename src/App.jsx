@@ -3,7 +3,7 @@ import React from 'react';
 import './App.scss';
 
 import logo from './logo.svg';
-import ExampleComponent from './components/ExampleComponent';
+import Home from "./components/Home/";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         >
           Learn React
         </a>
-        <ExampleComponent />
+        <Home />
       </header>
     </div>
   );

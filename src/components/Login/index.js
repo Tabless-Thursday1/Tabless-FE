@@ -1,3 +1,3 @@
-import Login from './Login';
+import FormikLoginForm from './LoginComponent';
 
-export default Login;
+export default FormikLoginForm;

@@ -1,4 +1,4 @@
-import { filterObject } from '.';
+import { filterObject } from './filterObject';
 
 export const buildMapStateToProps = ({ propsShape }) => (state) => filterObject({
   sourceObject: state,

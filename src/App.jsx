@@ -19,8 +19,6 @@ function App() {
       <div className="app">
         <Route path="/" component={NavTab} />
         <Route exact path="/" component={WelcomePage} />
-        <Route path="/tab1" component={FormikLoginForm} />
-        <Route path="/tab2" component={FormikSignupForm} />
         <Route path="/tab3" component={Home} />
         <Route path="/tab4" component={Tab4} />
       </div>

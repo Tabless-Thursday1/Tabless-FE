@@ -28,7 +28,7 @@ const LoginForm = ({ errors, touched }) => (
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg">Log In</button>
+        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Log In</button>
       </Form>
     </div>
   </div>

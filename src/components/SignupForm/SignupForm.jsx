@@ -55,7 +55,7 @@ const SignupForm = ({ errors, touched }) => (
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg">Register</button>
+        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Register</button>
       </Form>
     </div>
   </div>

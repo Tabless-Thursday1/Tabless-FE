@@ -8,10 +8,10 @@ import Home from './components/Home';
 // import FormikSignupForm from './components/Signup';
 // import PrivateRoute from './utils/PrivateRoute';
 import NavTab from './components/NavBarTabs/NavTabLinks/NavTab';
-import Tab1 from './components/NavBarTabs/Tab1/tab1';
-import Tab2 from './components/NavBarTabs/Tab2/tab2';
-import Tab3 from './components/NavBarTabs/Tab3/tab3';
-import Tab4 from './components/NavBarTabs/Tab4/tab4';
+import Tab1 from './components/NavTabs/Tab1/tab1';
+import Tab2 from './components/NavTabs/Tab2/tab2';
+import Tab3 from './components/NavTabs/Tab3/tab3';
+import Tab4 from './components/NavTabs/Tab4/tab4';
 import WelcomePage from './components/NavBarTabs/HomePage/HomePage';
 
 function App() {

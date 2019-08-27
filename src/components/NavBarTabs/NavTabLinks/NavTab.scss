@@ -4,10 +4,11 @@
     margin-top: 50rem; //remove before demo
     text-align: center;
     font-size: 1.4rem;
+    height: 10vh;
 
     .your-tabs {
         // border: 1px solid red;
-        height: 100vh;
+        // height: 5vh;
 
         background-color: #4EA6A6;
 
@@ -22,7 +23,7 @@
 
     .welcome-tab {
         // border: 1px solid red;
-        height: 100vh;
+        // height: 5vh;
         background-color: #4EA6A6;
 
         h3 {
@@ -36,7 +37,7 @@
 
     .about-tab {
         // border: 1px solid red;
-        height: 100vh;
+        // height: 5vh;
         background-color: #4EA6A6;
         flex-wrap: wrap;
 
@@ -52,7 +53,7 @@
     .meet-the-team {
     // border: 1px solid red;
     border-radius: 7px;
-    height: 100vh;
+    // height: 5vh;
 
     background-color: #277373;
 

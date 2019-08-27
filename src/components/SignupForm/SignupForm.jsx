@@ -1,4 +1,4 @@
-// import './SingupComponent.scss';
+// import './SingupForm.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';

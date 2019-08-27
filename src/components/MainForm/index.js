@@ -1,3 +1,3 @@
-import Signup from './SignupComponent';
+import MainForm from './MainForm';
 
-export default Signup;
+export default MainForm;

@@ -12,4 +12,4 @@ return (
 )
 };
 
-export default FormikSignupForm
+export default MainFormComponent

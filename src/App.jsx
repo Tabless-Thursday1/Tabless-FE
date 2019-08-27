@@ -4,8 +4,8 @@ import { Route, Link } from 'react-router-dom';
 import './App.scss';
 
 import Home from './components/Home';
-// import FormikLoginForm from './components/Login';
-// import FormikSignupForm from './components/Signup';
+import FormikLoginForm from './components/Login';
+import FormikSignupForm from './components/Signup';
 // import PrivateRoute from './utils/PrivateRoute';
 import NavTab from './components/NavBarTabs/NavTabLinks/NavTab';
 import Tab1 from './components/NavBarTabs/Tab1/tab1';
@@ -22,12 +22,12 @@ const App = () => (
     <Route path="/tab2" component={Tab2} />
     <Route path="/tab3" component={Tab3} />
     <Route path="/tab4" component={Tab4} />
-    {/* <ul>
+    <ul>
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
       <Route path="/login" component={FormikLoginForm} />
       <Route path="/signup" component={FormikSignupForm} />
-    </ul> */}
+    </ul>
   </div>
 );
 

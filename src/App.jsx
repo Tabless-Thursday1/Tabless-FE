@@ -27,12 +27,6 @@ function App() {
         <Route path="/tab4" component={Tab4} />
         <Route path="/edit/:tabId" render={() => <FormikMainForm edit />} />
         <Route path="/add" component={FormikMainForm} />
-        {/* <ul>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
-          <Route path="/login" component={FormikLoginForm} />
-          <Route path="/signup" component={FormikSignupForm} />
-        </ul> */}
       </div>
     </Router>
   );

@@ -11,11 +11,12 @@ function NavTab(props) {
 
   function callback(key) {
     props.history.push(`/${key}`);
+    console.log();
   }
 
   return (
     <div className="nav-wrapper">
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <Tabs activeKey={props.location.pathname.substring(1)} onTabClick={callback}>
         <TabPane tab="Your Tabs" key="tab1" className="tab">
           <Route path="/tab1" component={LoginForm} />
         </TabPane>

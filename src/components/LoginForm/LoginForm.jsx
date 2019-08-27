@@ -8,7 +8,7 @@ import './LoginForm.scss';
 const LoginForm = ({ errors, touched }) => (
   <div className="container">
     <div className="Login-Form">
-      <h2>Welcome Back</h2>
+      <h2 className="form-title">Welcome Back</h2>
       <Form>
         <Field
           className="field"

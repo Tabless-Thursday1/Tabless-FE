@@ -8,7 +8,7 @@ import './SignupForm.scss';
 const SignupForm = ({ errors, touched }) => (
   <div className="container">
     <div className="Signup-Form">
-      <h2>Sign Up</h2>
+      <h2 className="form-title">Sign Up</h2>
       <Form>
         <Field
           className="field"

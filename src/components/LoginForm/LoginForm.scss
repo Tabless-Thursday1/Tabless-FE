@@ -2,16 +2,17 @@
 
 .container {
   display:flex;
-  height: 100vh;
+  height: 90vh;
   background-image:url("splash-form.jpg");
-  background-size: 1400px;
+  background-size: 2000px;
   font-family: 'Raleway', sans-serif;
 }
-.Login-Form {
+.Login-Form, .Signup-Form {
   width:50%;
+  max-width:500px;
   margin:auto;
   padding: 5%;
-  background-color: rgba(104, 212, 206, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 

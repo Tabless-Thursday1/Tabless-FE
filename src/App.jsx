@@ -18,11 +18,9 @@ function App() {
     <Router>
       <div className="app">
         <NavTab />
-        <FormikLoginForm />
-        <FormikSignupForm />
         <Route exact path="/" component={WelcomePage} />
-        <Route path="/tab1" component={Tab1} />
-        <Route path="/tab2" component={Tab2} />
+        <Route path="/tab1" component={FormikLoginForm} />
+        <Route path="/tab2" component={FormikSignupForm} />
         <Route path="/tab3" component={Tab3} />
         <Route path="/tab4" component={Tab4} />
       </div>

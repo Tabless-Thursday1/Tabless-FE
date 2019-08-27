@@ -7,7 +7,7 @@ import './NavTab.scss';
 
 function NavTab() {
   return (
-    <div>
+    <div className="chicken">
       <div className="nav-wrapper wrapper">
         <NavLink exact to="/" activeClassName="tab welcome">
           <h1>

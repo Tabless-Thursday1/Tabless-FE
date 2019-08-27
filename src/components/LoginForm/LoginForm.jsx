@@ -12,18 +12,14 @@ const LoginForm = ({ errors, touched }) => (
         type="text"
         name="username"
         placeholder="username"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
       )}
       <Field
-        type="text"
+        type="password"
         name="password"
         placeholder="password"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
@@ -40,6 +36,9 @@ const FormikLoginForm = withFormik({
       password: password || '',
     };
   },
+  validateOnChange: false,
+
+  validateOnBlur: false,
 
   validationSchema: Yup.object().shape({
     username: Yup.string().required(),

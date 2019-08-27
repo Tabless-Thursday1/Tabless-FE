@@ -12,8 +12,6 @@ const SignupForm = ({ errors, touched }) => (
         type="text"
         name="firstname"
         placeholder="First Name"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.firstname && errors.firstname && (
         <p className="error">{errors.firstname}</p>
@@ -22,8 +20,6 @@ const SignupForm = ({ errors, touched }) => (
         type="text"
         name="lastname"
         placeholder="Last Name"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.lastname && errors.lastname && (
         <p className="error">{errors.lastname}</p>
@@ -32,8 +28,6 @@ const SignupForm = ({ errors, touched }) => (
         type="text"
         name="email"
         placeholder="E-Mail"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.email && errors.email && (
         <p className="error">{errors.email}</p>
@@ -42,8 +36,6 @@ const SignupForm = ({ errors, touched }) => (
         type="text"
         name="username"
         placeholder="Username"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
@@ -52,8 +44,6 @@ const SignupForm = ({ errors, touched }) => (
         type="text"
         name="password"
         placeholder="Password"
-        validateOnChange={false}
-        validateOnBlur
       />
       {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
@@ -79,6 +69,10 @@ const FormikSignupForm = withFormik({
       password: password || '',
     };
   },
+
+  validateOnChange: false,
+
+  validateOnBlur: false,
 
   validationSchema: Yup.object().shape({
     firstname: Yup.string().required(),

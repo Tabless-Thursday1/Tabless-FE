@@ -25,6 +25,16 @@ import { dummyData } from '../dummyData';
 const initialState = {
   exampleVariable: 'Example',
   tabs: dummyData,
+  sendingSignup: false,
+  errorSigningUp: false,
+  sendingLogin: false,
+  ErrorLoggingIn: false,
+  loadingTabs: false,
+  errorLoadingTabs: false,
+  sendingTabData: false,
+  errorSendingTab: false,
+  deletingTab: false,
+  errorDeletingTab: false,
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -37,75 +47,111 @@ export const reducer = (state = initialState, { type, payload }) => {
     case POST_LOGIN_START:
       return {
         ...state,
-      }
+        sendingSignup: true,
+        errorSigningUp: false,
+      };
     case POST_LOGIN_SUCCESS:
       return {
         ...state,
-      }
+        sendingSignup: false,
+        errorSigningUp: false,
+      };
     case POST_LOGIN_FAILURE:
       return {
         ...state,
-      }
+        sendingSignup: false,
+        errorSigningUp: true,
+      };
     case POST_SIGNUP_START:
       return {
         ...state,
-      }
+        sendingSignup: true,
+        errorSigningUp: false,
+      };
     case POST_SIGNUP_SUCCESS:
       return {
         ...state,
-      }
+        sendingSignup: false,
+        errorSigningUp: false,
+      };
     case POST_SIGNUP_FAILURE:
       return {
         ...state,
-      }
+        sendingSignup: false,
+        errorSigningUp: true,
+      };
     case GET_TABS_START:
       return {
         ...state,
-      }
+        loadingTabs: true,
+        errorLoadingTabs: false,
+      };
     case GET_TABS_SUCCESS:
       return {
         ...state,
-      }
+        loadingTabs: false,
+        errorLoadingTabs: false,
+      };
     case GET_TABS_FAILURE:
       return {
         ...state,
-      }
+        loadingTabs: false,
+        errorLoadingTabs: true,
+      };
     case ADD_TAB_START:
       return {
         ...state,
-      }
+        sendingTabData: true,
+        errorSendingTab: false,
+      };
     case ADD_TAB_SUCCESS:
       return {
         ...state,
-      }
+        sendingTabData: false,
+        errorSendingTab: false,
+      };
     case ADD_TAB_FAILURE:
       return {
         ...state,
-      }
+        sendingTabData: false,
+        errorSendingTab: true,
+      };
     case UPDATE_TAB_START:
       return {
         ...state,
-      }
+        sendingTabData: true,
+        errorSendingTab: false,
+      };
     case UPDATE_TAB_SUCCESS:
       return {
         ...state,
-      }
+        sendingTabData: false,
+        errorSendingTab: false,
+      };
     case UPDATE_TAB_FAILURE:
       return {
         ...state,
-      }
+        sendingTabData: false,
+        errorSendingTab: true,
+      };
     case REMOVE_TAB_START:
       return {
         ...state,
-      }
+        deletingTab: true,
+        errorDeletingTab: false,
+      };
     case REMOVE_TAB_SUCCESS:
       return {
         ...state,
-      }
+        deletingTab: false,
+        errorDeletingTab: false,
+      };
     case REMOVE_TAB_FAILURE:
       return {
         ...state,
-      }
+        deletingTab: false,
+        errorDeletingTab: true,
+      };
     default:
       if (state === initialState) return state;
       throw new Error(`${type} is not a valid type`);

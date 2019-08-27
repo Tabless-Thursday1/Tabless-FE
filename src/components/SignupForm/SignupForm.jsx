@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
@@ -14,7 +15,7 @@ const SignupForm = ({ errors, touched }) => (
         placeholder="First Name"
         validateOnChange={false}
         validateOnBlur
-        values='firstname'
+        values="firstname"
       />
       {touched.firstname && errors.firstname && (
         <p className="error">{errors.firstname}</p>
@@ -25,7 +26,7 @@ const SignupForm = ({ errors, touched }) => (
         placeholder="Last Name"
         validateOnChange={false}
         validateOnBlur
-        values='lastname'
+        values="lastname"
       />
       {touched.lastname && errors.lastname && (
         <p className="error">{errors.lastname}</p>
@@ -36,7 +37,7 @@ const SignupForm = ({ errors, touched }) => (
         placeholder="E-Mail"
         validateOnChange={false}
         validateOnBlur
-        values='email'
+        values="email"
       />
       {touched.email && errors.email && (
         <p className="error">{errors.email}</p>
@@ -47,7 +48,7 @@ const SignupForm = ({ errors, touched }) => (
         placeholder="Username"
         validateOnChange={false}
         validateOnBlur
-        values='username'
+        values="username"
       />
       {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
@@ -58,7 +59,7 @@ const SignupForm = ({ errors, touched }) => (
         placeholder="Password"
         validateOnChange={false}
         validateOnBlur
-        values='password'
+        values="password"
       />
       {touched.password && errors.password && (
         <p className="error">{errors.password}</p>

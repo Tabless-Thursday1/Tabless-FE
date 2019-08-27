@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
@@ -14,7 +15,7 @@ const LoginForm = ({ errors, touched }) => (
         placeholder="username"
         validateOnChange={false}
         validateOnBlur
-        values='username'
+        values="username"
       />
       {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
@@ -25,7 +26,7 @@ const LoginForm = ({ errors, touched }) => (
         placeholder="password"
         validateOnChange={false}
         validateOnBlur
-        values='password'
+        values="password"
       />
       {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
@@ -47,8 +48,8 @@ const FormikLoginForm = withFormik({
   validateOnBlur: false,
 
   validationSchema: Yup.object().shape({
-    username: Yup.string().required("Username is a required field."),
-    password: Yup.string().required("Password is a required field."),
+    username: Yup.string().required('Username is a required field.'),
+    password: Yup.string().required('Password is a required field.'),
   }),
 
   handleSubmit(values, { setStatus }) {

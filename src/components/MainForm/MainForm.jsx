@@ -11,8 +11,12 @@ const MainForm = ({
   errors,
   touched,
   props,
+  values,
 }) => {
   console.log('in form', props);
+  const {
+    url, description, category, option,
+  } = values;
 
   // const [tab, setTab] = useState(props.tab);
   // useEffect(() => {
@@ -22,7 +26,6 @@ const MainForm = ({
   // const addTab = (event) => {
   //   event.preventDefault();
   // };
-
   return (
     <div className="Main-Form">
       <Form>
@@ -32,7 +35,7 @@ const MainForm = ({
           placeholder="URL"
           validateOnChange={false}
           validateOnBlur
-          values="url"
+          values={url}
         />
         {touched.url && errors.url && (
         <p className="error">{errors.url}</p>
@@ -43,7 +46,7 @@ const MainForm = ({
           placeholder="Description"
           validateOnChange={false}
           validateOnBlur
-          values="description"
+          values={description}
         />
         {touched.description && errors.description && (
         <p className="error">{errors.description}</p>
@@ -54,7 +57,7 @@ const MainForm = ({
           placeholder="category"
           validateOnChange={false}
           validateOnBlur
-          values="category"
+          values={category}
         />
         {touched.category && errors.category && (
         <p className="error">{errors.category}</p>
@@ -65,7 +68,7 @@ const MainForm = ({
           name="option"
           placeholder="None"
           validateOnChange={false}
-          values="option"
+          values={option}
           validateOnBlur
         >
           <option value="public">Public</option>
@@ -101,7 +104,7 @@ const FormikMainForm = withFormik({
     category: Yup.string(),
   }),
 
-  handleSubmit(values, { setStatus, event }) {
+  handleSubmit(values, { setStatus, event, resetForm }) {
     event.preventDefault();
     const restCallType = values.edit === true ? 'put' : 'post';
     const { tabId } = values;

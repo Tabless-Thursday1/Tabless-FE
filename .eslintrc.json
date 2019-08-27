@@ -23,6 +23,6 @@
         "jest"
     ],
     "rules": {
-        "react/jsx-props-no-spreading": 0
+        "linebreak-style": 0
     }
 }

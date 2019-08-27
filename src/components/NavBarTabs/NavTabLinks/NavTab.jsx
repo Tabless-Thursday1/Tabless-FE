@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'antd';
 
+import './NavTab.scss';
+
 
 function NavTab() {
   return (

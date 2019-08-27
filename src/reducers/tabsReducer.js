@@ -103,6 +103,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         sendingTabData: true,
         errorSendingTab: false,
+        // tabs: [...state.tabs, payload],
       };
     case ADD_TAB_SUCCESS:
       return {

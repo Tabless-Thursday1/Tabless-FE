@@ -7,6 +7,7 @@ export const dummyData = [
     categories: [
       'search',
       'research',
+      'evil',
     ],
   },
   {
@@ -15,28 +16,28 @@ export const dummyData = [
     private: false,
     description: "it's facebook",
     categories: [
-      'search',
-      'chicken',
+      'social',
+      'evil',
     ],
   },
   {
     name: 'Instagram',
     url: 'https://www.instagram.com',
     private: false,
-    description: "it's instagram",
+    description: '',
     categories: [
-      'search',
-      'chicken',
+      'social',
+      'evil',
     ],
   },
   {
     name: 'Myspace',
     url: 'https://www.myspace.com',
-    private: false,
+    private: true,
     description: "it's worse than that, he's dead Jim",
     categories: [
-      'search',
-      'chicken',
+      'social',
+      'forgotten',
     ],
   },
 ];

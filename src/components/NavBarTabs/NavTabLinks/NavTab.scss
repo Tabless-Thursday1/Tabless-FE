@@ -1,10 +1,92 @@
 @import '../../../scss/1-utils/#index';
 
 .nav-wrapper {
-  background-color:black;
-  border: 1px solid red;
+    margin-top: 50rem; //remove before demo
+    text-align: center;
+    font-size: 1.4rem;
+
+    .your-tabs {
+        // border: 1px solid red;
+        height: 100vh;
+
+        background-color: #4EA6A6;
+
+        h3 {
+            font-size: 3rem; 
+        }
+        p {
+            font-size: 2rem;
+            color: white;
+        }
+    }
+
+    .welcome-tab {
+        // border: 1px solid red;
+        height: 100vh;
+        background-color: #4EA6A6;
+
+        h3 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 2rem;
+            color: white;
+        }
+    }
+
+    .about-tab {
+        // border: 1px solid red;
+        height: 100vh;
+        background-color: #4EA6A6;
+        flex-wrap: wrap;
+
+        h3 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 2rem;
+            color: white;
+        }
+    }
+
+    .meet-the-team {
+    // border: 1px solid red;
+    border-radius: 7px;
+    height: 100vh;
+
+    background-color: #277373;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    // font-weight: bold;
+ }
+
+ h2 {
+    //  border: 1px solid red;
+     border-radius: 7px;
+     display: flex;
+     justify-content: space-around;
+     align-content: center;
+     flex-wrap: wrap;
+ }
+ 
+ ul {
+    // border: 1px solid blue;
+   margin: 10px 0 10px 0;
+    color: black;
+    background-color:#B0D9D5;  
+    font-family: 'Raleway', sans-serif;  
+    font-size: 1.4rem;
+
+ }
+ li:hover {
+     opacity: 0.5;
+ }
 }
 
-.chicken {
-  background-color: blue;
-}
+
+
+
+
+
+

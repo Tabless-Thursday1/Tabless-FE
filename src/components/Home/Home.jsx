@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Collapse, Button } from 'antd';
+
 import './Home.scss';
+
 import group from './Group';
+import { dummyData } from '../../dummyData';
 
 const Home = () => {
   /* Object shape: REQUIRES GroupING ALL DATA
@@ -19,28 +22,7 @@ const Home = () => {
     }
     */
   const [newGroup, setGroup] = useState([]);
-  const dummyData = [
-    {
-      name: 'Google',
-      url: 'https://www.google.com',
-      private: false,
-      description: "it's google",
-      categories: [
-        'search',
-        'research',
-      ],
-    },
-    {
-      name: 'Facebook',
-      url: 'https://www.facebook.com',
-      private: false,
-      description: "it's facebook",
-      categories: [
-        'search',
-        'chicken',
-      ],
-    },
-  ];
+
   useEffect(() => {
     const groupedCategories = group(dummyData);
     setGroup(groupedCategories);

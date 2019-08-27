@@ -4,28 +4,53 @@ import axios from 'axios';
 import { Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
-const SignupForm = ({errors, touched, values, handleSubmit, status  }) => {
+const SignupForm = ({errors, touched}) => {
 
 return (
     <div className="Signup-Form"> 
             <Form> 
-                <Field type='text' name='firstname' placeholder='First Name' />
+                <Field 
+                type='text'
+                name='firstname'
+                placeholder='First Name'
+                validateOnChange={false}
+                validateOnBlur />
                  {touched.firstname && errors.firstname && (
                 <p className="error">{errors.firstname}</p>
                 )}
-                  <Field type='text' name='lastname' placeholder='Last Name' />
+                <Field
+                type='text'
+                name='lastname'
+                placeholder='Last Name' 
+                validateOnChange={false} 
+                validateOnBlur />
                  {touched.lastname && errors.lastname && (
                 <p className="error">{errors.lastname}</p>
                 )}
-                  <Field type='text' name='email' placeholder='E-Mail' />
+                <Field 
+                type='text' 
+                name='email' 
+                placeholder='E-Mail' 
+                validateOnChange={false} 
+                validateOnBlur />
                  {touched.email && errors.email && (
                 <p className="error">{errors.email}</p>
                 )}
-                  <Field type='text' name='username' placeholder='Username' />
+                <Field 
+                type='text' 
+                name='username' 
+                placeholder='Username' 
+                validateOnChange={false} 
+                validateOnBlur />
                  {touched.username && errors.username && (
                 <p className="error">{errors.username}</p>
                 )}
-                  <Field type='text' name='password' placeholder='Password' />
+                <Field 
+                type='text' 
+                name='password' 
+                placeholder='Password' 
+                validateOnChange={false} 
+                validateOnBlur />
                  {touched.password && errors.password && (
                 <p className="error">{errors.password}</p>
                 )}

@@ -28,7 +28,7 @@ const initialState = {
   sendingSignup: false,
   errorSigningUp: false,
   sendingLogin: false,
-  ErrorLoggingIn: false,
+  errorLoggingIn: false,
   loadingTabs: false,
   errorLoadingTabs: false,
   sendingTabData: false,
@@ -43,24 +43,6 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         exampleVariable: payload,
-      };
-    case POST_LOGIN_START:
-      return {
-        ...state,
-        sendingSignup: true,
-        errorSigningUp: false,
-      };
-    case POST_LOGIN_SUCCESS:
-      return {
-        ...state,
-        sendingSignup: false,
-        errorSigningUp: false,
-      };
-    case POST_LOGIN_FAILURE:
-      return {
-        ...state,
-        sendingSignup: false,
-        errorSigningUp: true,
       };
     case POST_SIGNUP_START:
       return {
@@ -79,6 +61,24 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         sendingSignup: false,
         errorSigningUp: true,
+      };
+    case POST_LOGIN_START:
+      return {
+        ...state,
+        sendingLogin: true,
+        errorLoggingIn: false,
+      };
+    case POST_LOGIN_SUCCESS:
+      return {
+        ...state,
+        sendingLogin: false,
+        errorLoggingIn: false,
+      };
+    case POST_LOGIN_FAILURE:
+      return {
+        ...state,
+        sendingLogin: false,
+        errorLoggingIn: true,
       };
     case GET_TABS_START:
       return {

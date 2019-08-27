@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'antd';
 
-
 const NavTab = () => (
   <div>
     <div className="nav-wrapper wrapper">

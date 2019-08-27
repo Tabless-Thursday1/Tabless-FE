@@ -4,20 +4,20 @@ import { Tabs, Icon } from 'antd';
 import './NavTab.scss';
 
 
-function NavTab() {
+function NavTab(props) {
   const { TabPane } = Tabs;
 
   function callback(key) {
-    console.log(key);
+    props.history.push(`/${key}`);
   }
 
   return (
     <div className="nav-wrapper">
       <Tabs defaultActiveKey="1" onChange={callback}>
-        <TabPane tab="Your Tabs" key="1" className="your-tabs your">
+        <TabPane tab="Your Tabs" key="tab1" className="your-tabs your">
           <h3>We can route our tabs here.</h3>
         </TabPane>
-        <TabPane tab="Welcome" key="2" className="welcome-tab welcome">
+        <TabPane tab="Welcome" key="tab2" className="welcome-tab welcome">
           <h3>Welcome to Tabless Thursday</h3>
           <p>Here at Tabless Thursday we strive to make your browser look and feel more organized.</p>
         </TabPane>

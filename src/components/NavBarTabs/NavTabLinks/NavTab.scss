@@ -1,8 +1,19 @@
 @import '../../../scss/1-utils/#index';
 
 .nav-wrapper {
+text-align: center;
+}
+
+.meet-the-team h2{
     border: 1px solid red;
+
     display: flex;
     justify-content: space-around;
-    
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+ul {
+    border: 1px solid blue;
 }

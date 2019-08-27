@@ -39,8 +39,6 @@ const FormikLoginForm = withFormik({
 
     handleSubmit(values, { setStatus }) {
         axios
-         //axiosWithAuth
-         //uncomment above when server is pulling data
         .post("", values)
         //post endpoint of server when ready above
         .then(res => {

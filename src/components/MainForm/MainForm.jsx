@@ -31,6 +31,7 @@ const MainForm = ({
         placeholder="URL"
         validateOnChange={false}
         validateOnBlur
+        values='url'
       />
       {touched.url && errors.url && (
         <p className="error">{errors.url}</p>
@@ -41,6 +42,7 @@ const MainForm = ({
         placeholder="Description"
         validateOnChange={false}
         validateOnBlur
+        values='description'
       />
       {touched.description && errors.description && (
         <p className="error">{errors.description}</p>
@@ -51,6 +53,7 @@ const MainForm = ({
         placeholder="category"
         validateOnChange={false}
         validateOnBlur
+        values='category'
       />
       {touched.category && errors.category && (
         <p className="error">{errors.category}</p>
@@ -61,6 +64,7 @@ const MainForm = ({
         name="option"
         placeholder="None"
         validateOnChange={false}
+        values='option'
         validateOnBlur>
           <option value='public'>Public</option>
           <option value='private'>Private</option>
@@ -90,6 +94,7 @@ const FormikMainForm = withFormik({
     username: Yup.string().required(),
     password: Yup.string().required(),
     option: Yup.string(),
+    category: Yup.string(),
   }),
   
   handleSubmit(values, { setStatus, event }) {
@@ -103,7 +108,9 @@ const FormikMainForm = withFormik({
         setStatus(res.data);
       })
       .catch((err) => console.log(err.response));
-  },
+  }
+  ,
+  
 })(MainForm);
 
 export default FormikMainForm;

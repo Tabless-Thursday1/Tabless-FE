@@ -6,31 +6,32 @@ import * as Yup from 'yup';
 import './LoginForm.scss';
 
 const LoginForm = ({ errors, touched }) => (
-  <div className="container">
-    <div className="Login-Form">
-      <h2>Welcome Back</h2>
-      <Form>
-        <Field
-          className="field"
-          type="text"
-          name="username"
-          placeholder="Username"
-        />
-        {touched.username && errors.username && (
-          <p className="error">{errors.username}</p>
-        )}
-        <Field
-          className="field"
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        {touched.password && errors.password && (
-          <p className="error">{errors.password}</p>
-        )}
-        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg">Log In</button>
-      </Form>
-    </div>
+  <div className="Login-Form">
+    <Form>
+      <Field
+        type="text"
+        name="username"
+        placeholder="username"
+        validateOnChange={false}
+        validateOnBlur
+        values='username'
+      />
+      {touched.username && errors.username && (
+        <p className="error">{errors.username}</p>
+      )}
+      <Field
+        type="text"
+        name="password"
+        placeholder="password"
+        validateOnChange={false}
+        validateOnBlur
+        values='password'
+      />
+      {touched.password && errors.password && (
+        <p className="error">{errors.password}</p>
+      )}
+      <button type="submit">Submit</button>
+    </Form>
   </div>
 );
 

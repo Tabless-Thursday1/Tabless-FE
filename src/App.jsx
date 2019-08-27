@@ -14,26 +14,24 @@ import Tab3 from './components/NavBarTabs/Tab3/tab3';
 import Tab4 from './components/NavBarTabs/Tab4/tab4';
 import WelcomePage from './components/NavBarTabs/HomePage/HomePage';
 
-function App() {
-  return (
-    <Router>
-      <div className="app">
-        <NavTab />
-        <Home />
-        <Route exact path="/" component={WelcomePage} />
-        <Route path="/tab1" component={Tab1} />
-        <Route path="/tab2" component={Tab2} />
-        <Route path="/tab3" component={Tab3} />
-        <Route path="/tab4" component={Tab4} />
-        {/* <ul>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
-          <Route path="/login" component={FormikLoginForm} />
-          <Route path="/signup" component={FormikSignupForm} />
-        </ul> */}
-      </div>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <div className="app">
+      <NavTab />
+      <Home />
+      <Route exact path="/" component={WelcomePage} />
+      <Route path="/tab1" component={Tab1} />
+      <Route path="/tab2" component={Tab2} />
+      <Route path="/tab3" component={Tab3} />
+      <Route path="/tab4" component={Tab4} />
+      {/* <ul>
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Signup</Link>
+        <Route path="/login" component={FormikLoginForm} />
+        <Route path="/signup" component={FormikSignupForm} />
+      </ul> */}
+    </div>
+  </Router>
+);
 
 export default App;

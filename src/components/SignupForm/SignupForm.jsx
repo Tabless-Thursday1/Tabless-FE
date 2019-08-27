@@ -8,7 +8,7 @@ import './SignupForm.scss';
 const SignupForm = ({ errors, touched }) => (
   <div className="container">
     <div className="Signup-Form">
-      <h2>Sign Up</h2>
+      <h2 className="form-title">Sign Up</h2>
       <Form>
         <Field
           className="field"
@@ -55,7 +55,7 @@ const SignupForm = ({ errors, touched }) => (
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg">Register</button>
+        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Register</button>
       </Form>
     </div>
   </div>

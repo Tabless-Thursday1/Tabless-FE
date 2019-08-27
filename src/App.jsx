@@ -4,8 +4,8 @@ import { Route, Link } from 'react-router-dom';
 import './App.scss';
 
 import Home from './components/Home';
-import FormikLoginForm from './components/Login';
-import FormikSignupForm from './components/Signup';
+import FormikLoginForm from './components/LoginForm';
+import FormikSignupForm from './components/SignupForm';
 // import PrivateRoute from './utils/PrivateRoute';
 import NavTab from './components/NavBarTabs/NavTabLinks/NavTab';
 import Tab1 from './components/NavBarTabs/Tab1/tab1';

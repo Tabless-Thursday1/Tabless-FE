@@ -11,17 +11,16 @@ function NavTab(props) {
 
   function callback(key) {
     props.history.push(`/${key}`);
-    console.log();
   }
 
   return (
     <div className="nav-wrapper">
       <Tabs activeKey={props.location.pathname.substring(1)} onTabClick={callback}>
-        <TabPane tab="Your Tabs" key="tab1" className="tab">
+        <TabPane tab="Log In" key="tab1" className="tab">
           <Route path="/tab1" component={LoginForm} />
         </TabPane>
-        <TabPane tab="Welcome" key="tab2" className="tab">
-        <Route path="/tab2" component={SignupForm} />
+        <TabPane tab="Sign Up" key="tab2" className="tab">
+          <Route path="/tab2" component={SignupForm} />
         </TabPane>
         <TabPane tab="About" key="3" className="tab">
           <h3>About Tabless Thursday</h3>
@@ -31,7 +30,7 @@ function NavTab(props) {
             Makes it easy to pick up where you left off.
           </p>
         </TabPane>
-        <TabPane tab="Meet The Team" key="4" className="tab">
+        <TabPane tab="Meet The Team" key="team" className="tab">
           <div className="meet-the-team team">
             <h2>WEB UI DEVELOPER</h2>
             <ul>

@@ -14,19 +14,35 @@ function NavTab() {
   return (
     <div className="nav-wrapper">
       <Tabs defaultActiveKey="1" onChange={callback}>
-        <TabPane tab="Your Tabs" key="1" className="your-tabs your">
+        <TabPane
+          tab={(
+            <span>
+              <Icon type="folder-open" theme="twoTone" />
+            Your Tabs
+            </span>
+)}
+          key="1"
+          className="your-tabs your"
+        >
           <h3>We can route our tabs here.</h3>
         </TabPane>
         <TabPane tab="Welcome" key="2" className="welcome-tab welcome">
           <h3>Welcome to Tabless Thursday</h3>
-          <p>Here at Tabless Thursday we strive to make your browser look and feel more organized.</p>
+          <p>
+            Here at Tabless Thursday we strive
+            to make your browser look and feel
+            more organized.
+          </p>
         </TabPane>
         <TabPane tab="About" key="3" className="about-tab about">
           <h3>About Tabless Thursday</h3>
           <p>
             People often have a million tabs up and lose track of what they were doing.
-            This website lets you organize them in to-do lists and make a note of why it was important.
-            Makes it easy to pick up where you left off.
+            This website lets you organize
+            them in to-do lists and make a
+            note of why it was important.
+            Makes it easy to pick up where
+            you left off.
           </p>
         </TabPane>
         <TabPane tab="Meet The Team" key="4">

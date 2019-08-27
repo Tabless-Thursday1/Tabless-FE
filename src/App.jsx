@@ -1,13 +1,12 @@
 import React from 'react';
-import './App.scss';
-// import logo from './logo.svg';
-// import Home from './components/Home/';
-// import ExampleCompnent from './components/ExampleComponent';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import './App.scss';
+
+import Home from './components/Home';
 // import FormikLoginForm from './components/Login';
 // import FormikSignupForm from './components/Signup';
 // import PrivateRoute from './utils/PrivateRoute';
-
 import NavTab from './components/NavBarTabs/NavTabLinks/NavTab';
 import Tab1 from './components/NavBarTabs/Tab1/tab1';
 import Tab2 from './components/NavBarTabs/Tab2/tab2';
@@ -20,7 +19,7 @@ function App() {
     <Router>
       <div className="app">
         <NavTab />
-        {/* <Home /> */}
+        <Home />
         <Route exact path="/" component={WelcomePage} />
         <Route path="/tab1" component={Tab1} />
         <Route path="/tab2" component={Tab2} />

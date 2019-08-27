@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Collapse, Button } from 'antd';
 import './Home.scss';
-import { sortedCategories, sort } from './Sort';
+import group from './Group';
 
 const Home = () => {
-  /* Object shape: REQUIRES SORTING ALL DATA
+  /* Object shape: REQUIRES GroupING ALL DATA
     category = {
         name:
         tabs: [
@@ -18,7 +18,7 @@ const Home = () => {
         ]
     }
     */
-  const [newSort, setSort] = useState([]);
+  const [newGroup, setGroup] = useState([]);
   const dummyData = [
     {
       name: 'Google',
@@ -41,19 +41,18 @@ const Home = () => {
       ],
     },
   ];
-
   useEffect(() => {
-    sort(dummyData);
-    setSort(sortedCategories);
+    const groupedCategories = group(dummyData);
+    setGroup(groupedCategories);
   }, []);
   const { Panel } = Collapse;
 
-  if (newSort.length === 0) {
+  if (newGroup.length === 0) {
     return (<h1>Loading...</h1>);
   }
   return (
     <div className="tabs">
-      {newSort.map((category) => (
+      {newGroup.map((category) => (
         <Collapse className="category-card">
           <div className="title">
             <h2>{category.name}</h2>

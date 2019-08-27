@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 
-import './SingupForm.scss';
+import './SignupForm.scss';
 
 const SignupForm = ({ errors, touched }) => (
   <div className="Signup-Form">

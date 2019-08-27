@@ -1,25 +1,59 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Icon } from 'antd';
+import { Tabs, Icon } from 'antd';
 
 import './NavTab.scss';
 
 
 function NavTab() {
+  const { TabPane } = Tabs;
+
+  function callback(key) {
+    console.log(key);
+  }
+
   return (
-    <div>
-      <div className="nav-wrapper wrapper">
-        <NavLink exact to="/" activeClassName="tab welcome">
-          <h1>
-              Tabless Thursday
-            <Icon type="folder-open" theme="twoTone" />
-          </h1>
-        </NavLink>
-        <NavLink to="/tab1" activeClassName="tab">Tab 1</NavLink>
-        <NavLink to="/tab2" activeClassName="tab">Tab 2</NavLink>
-        <NavLink to="/tab3" activeClassName="tab">Tab 3</NavLink>
-        <NavLink to="/tab4" activeClassName="tab">Tab 4</NavLink>
-      </div>
+    <div className="nav-wrapper">
+      <Tabs defaultActiveKey="1" onChange={callback}>
+        <TabPane tab="Your Tabs" key="1" className="your-tabs your">
+          <h3>We can route our tabs here.</h3>
+        </TabPane>
+        <TabPane tab="Welcome" key="2" className="welcome-tab welcome">
+          <h3>Welcome to Tabless Thursday</h3>
+          <p>Here at Tabless Thursday we strive to make your browser look and feel more organized.</p>
+        </TabPane>
+        <TabPane tab="About" key="3" className="about-tab about">
+          <h3>About Tabless Thursday</h3>
+          <p>
+            People often have a million tabs up and lose track of what they were doing.
+            This website lets you organize them in to-do lists and make a note of why it was important.
+            Makes it easy to pick up where you left off.
+          </p>
+        </TabPane>
+        <TabPane tab="Meet The Team" key="4">
+          <div className="meet-the-team team">
+            <h2>WEB UI DEVELOPER</h2>
+            <ul>
+              <li>Mason Roberts</li>
+              <li>Uzias Rivera</li>
+              <li>Jordan Athey</li>
+            </ul>
+            <h2>FRONTEND DEVELOPER (UNIT 2 WEB)</h2>
+            <ul>
+              <li>Jordan Doan</li>
+              <li>Benjamin Griffin</li>
+            </ul>
+            <h2>WEB BACKEND DEVELOPER</h2>
+            <ul>
+              <li>Zachary Imbriaco</li>
+            </ul>
+            <h2>FRONTEND FRAMEWORK DEVELOPER (UNIT 3 WEB)</h2>
+            <ul>
+              <li>Jeff Butler</li>
+              <li>Patrick Baldwin</li>
+            </ul>
+          </div>
+        </TabPane>
+      </Tabs>
     </div>
   );
 }

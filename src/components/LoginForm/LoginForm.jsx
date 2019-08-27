@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 import './LoginForm.scss';
 
+<<<<<<< HEAD
 const LoginForm = ({ errors, touched }) => (
   <div className="Login-Form">
     <Form>
@@ -25,6 +26,22 @@ const LoginForm = ({ errors, touched }) => (
         validateOnChange={false}
         validateOnBlur
       />
+=======
+const LoginForm = ({
+  errors,
+  touched,
+  values,
+  handleSubmit,
+  status,
+}) => (
+  <div className="Login-Form">
+    <Form>
+      <Field type="text" name="username" placeholder="username" />
+      {touched.username && errors.username && (
+        <p className="error">{errors.username}</p>
+      )}
+      <Field type="text" name="password" placeholder="password" />
+>>>>>>> 5e9f1ff32a1ee88557ebc4c63bb6e5d43f6af099
       {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
       )}

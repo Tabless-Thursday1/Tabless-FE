@@ -3,11 +3,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Signup from './Signup';
+import SignupForm from './SignupForm';
 
 describe('<Dashboard />', () => {
   it('should match snapshot', () => {
-    const component = renderer.create(<Signup />);
+    const component = renderer.create(<SignupForm />);
 
     expect(component.toJSON()).toMatchSnapshot();
   });

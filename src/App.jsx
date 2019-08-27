@@ -7,12 +7,14 @@ import Home from './components/Home';
 // import FormikLoginForm from './components/Login';
 // import FormikSignupForm from './components/Signup';
 // import PrivateRoute from './utils/PrivateRoute';
+import FormikMainForm from './components/MainForm'
 import NavTab from './components/NavBarTabs/NavTabLinks/NavTab';
 import Tab1 from './components/NavBarTabs/Tab1/tab1';
 import Tab2 from './components/NavBarTabs/Tab2/tab2';
 import Tab3 from './components/NavBarTabs/Tab3/tab3';
 import Tab4 from './components/NavBarTabs/Tab4/tab4';
 import WelcomePage from './components/NavBarTabs/HomePage/HomePage';
+import MainForm from './components/MainForm';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/tab2" component={Tab2} />
         <Route path="/tab3" component={Tab3} />
         <Route path="/tab4" component={Tab4} />
+        <Route path="/edit/:tabId" render={() => <FormikMainForm edit />} />
+        <Route path="/add" component={FormikMainForm} />
         {/* <ul>
           <Link to="/login">Login</Link>
           <Link to="/signup">Signup</Link>

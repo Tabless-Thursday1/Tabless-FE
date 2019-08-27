@@ -5,16 +5,26 @@ import axios from 'axios';
 import { Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 
-const LoginForm = ({errors, touched, values, handleSubmit, status  }) => {
+const LoginForm = ({errors, touched }) => {
 
 return (
     <div className="Login-Form"> 
             <Form> 
-                <Field type='text' name='username' placeholder='username' />
+                <Field
+                type='text' 
+                name='username' 
+                placeholder='username'
+                validateOnChange={false} 
+                validateOnBlur  />
                  {touched.username && errors.username && (
                 <p className="error">{errors.username}</p>
                 )}
-                  <Field type='text' name='password' placeholder='password' />
+                <Field
+                type='text' 
+                name='password' 
+                placeholder='password'
+                validateOnChange={false} 
+                validateOnBlur  />
                  {touched.password && errors.password && (
                 <p className="error">{errors.password}</p>
                 )}

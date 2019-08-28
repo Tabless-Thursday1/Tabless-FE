@@ -3,49 +3,8 @@
 .nav-wrapper {
     text-align: center;
     font-size: 1.4rem;
-
-    .your-tabs {
-        // border: 1px solid red;
-        height: 100vh;
-
-        background-color: #4EA6A6;
-
-        h3 {
-            font-size: 3rem; 
-        }
-        p {
-            font-size: 2rem;
-            color: white;
-        }
-    }
-
-    .welcome-tab {
-        // border: 1px solid red;
-        height: 100vh;
-        background-color: #4EA6A6;
-
-        h3 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 2rem;
-            color: white;
-        }
-    }
-
-    .about-tab {
-        // border: 1px solid red;
-        height: 100vh;
-        background-color: #4EA6A6;
-        flex-wrap: wrap;
-
-        h3 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 2rem;
-            color: white;
-        }
+    .tab {
+        height:93.7vh;
     }
 
     .meet-the-team {

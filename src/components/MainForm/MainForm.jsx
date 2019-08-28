@@ -11,12 +11,8 @@ const MainForm = ({
   errors,
   touched,
   props,
-  values,
 }) => {
   console.log('in form', props);
-  const {
-    url, description, category, option,
-  } = values;
 
   // const [tab, setTab] = useState(props.tab);
   // useEffect(() => {
@@ -35,7 +31,6 @@ const MainForm = ({
           placeholder="URL"
           validateOnChange={false}
           validateOnBlur
-          values={url}
         />
         {touched.url && errors.url && (
         <p className="error">{errors.url}</p>
@@ -46,7 +41,6 @@ const MainForm = ({
           placeholder="Description"
           validateOnChange={false}
           validateOnBlur
-          values={description}
         />
         {touched.description && errors.description && (
         <p className="error">{errors.description}</p>
@@ -57,7 +51,6 @@ const MainForm = ({
           placeholder="category"
           validateOnChange={false}
           validateOnBlur
-          values={category}
         />
         {touched.category && errors.category && (
         <p className="error">{errors.category}</p>
@@ -68,7 +61,6 @@ const MainForm = ({
           name="option"
           placeholder="None"
           validateOnChange={false}
-          values={option}
           validateOnBlur
         >
           <option value="public">Public</option>

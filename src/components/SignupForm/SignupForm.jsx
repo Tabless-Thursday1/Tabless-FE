@@ -9,74 +9,63 @@ import './SignupForm.scss';
 const SignupForm = ({
   errors,
   touched,
-  values,
-}) => {
-  const {
-    firstname, lastname, email, username, password,
-  } = values;
-  return (
-    <div className="Signup-Form">
-      <Form>
-        <Field
-          type="text"
-          name="firstname"
-          placeholder="First Name"
-          validateOnChange={false}
-          validateOnBlur
-          values={firstname}
+}) => (
+  <div className="Signup-Form">
+    <Form>
+      <Field
+        type="text"
+        name="firstname"
+        placeholder="First Name"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.firstname && errors.firstname && (
+      {touched.firstname && errors.firstname && (
         <p className="error">{errors.firstname}</p>
-        )}
-        <Field
-          type="text"
-          name="lastname"
-          placeholder="Last Name"
-          validateOnChange={false}
-          validateOnBlur
-          values={lastname}
+      )}
+      <Field
+        type="text"
+        name="lastname"
+        placeholder="Last Name"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.lastname && errors.lastname && (
+      {touched.lastname && errors.lastname && (
         <p className="error">{errors.lastname}</p>
-        )}
-        <Field
-          type="text"
-          name="email"
-          placeholder="E-Mail"
-          validateOnChange={false}
-          validateOnBlur
-          values={email}
+      )}
+      <Field
+        type="text"
+        name="email"
+        placeholder="E-Mail"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.email && errors.email && (
+      {touched.email && errors.email && (
         <p className="error">{errors.email}</p>
-        )}
-        <Field
-          type="text"
-          name="username"
-          placeholder="Username"
-          validateOnChange={false}
-          validateOnBlur
-          values={username}
+      )}
+      <Field
+        type="text"
+        name="username"
+        placeholder="Username"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.username && errors.username && (
+      {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
-        )}
-        <Field
-          type="text"
-          name="password"
-          placeholder="Password"
-          validateOnChange={false}
-          validateOnBlur
-          values={password}
+      )}
+      <Field
+        type="text"
+        name="password"
+        placeholder="Password"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.password && errors.password && (
+      {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
-        )}
-        <button type="submit">Submit</button>
-      </Form>
-    </div>
-  );
-};
+      )}
+      <button type="submit">Submit</button>
+    </Form>
+  </div>
+);
 const FormikSignupForm = withFormik({
   mapPropsToValues({
     firstname,

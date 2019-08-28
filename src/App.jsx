@@ -23,18 +23,10 @@ function App() {
       <div className="app">
         <Route path="/" component={NavTab} />
         <Route exact path="/" component={WelcomePage} />
-        <Route path="/tab1" component={FormikLoginForm} />
-        <Route path="/tab2" component={FormikSignupForm} />
         <Route path="/tab3" component={Home} />
         <Route path="/tab4" component={Tab4} />
         <Route path="/edit/:tabId" render={() => <FormikMainForm edit />} />
         <Route path="/add" component={FormikMainForm} />
-        {/* <ul>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
-          <Route path="/login" component={FormikLoginForm} />
-          <Route path="/signup" component={FormikSignupForm} />
-        </ul> */}
       </div>
     </Router>
   );

@@ -10,41 +10,33 @@ import './LoginForm.scss';
 const LoginForm = ({
   errors,
   touched,
-  values,
-}) => {
-  const {
-    username, password,
-  } = values;
-  return (
-    <div className="Login-Form">
-      <Form>
-        <Field
-          type="text"
-          name="username"
-          placeholder="username"
-          validateOnChange={false}
-          validateOnBlur
-          values={username}
+}) => (
+  <div className="Login-Form">
+    <Form>
+      <Field
+        type="text"
+        name="username"
+        placeholder="username"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.username && errors.username && (
+      {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
-        )}
-        <Field
-          type="text"
-          name="password"
-          placeholder="password"
-          validateOnChange={false}
-          validateOnBlur
-          values={password}
+      )}
+      <Field
+        type="text"
+        name="password"
+        placeholder="password"
+        validateOnChange={false}
+        validateOnBlur
         />
-        {touched.password && errors.password && (
+      {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
-        )}
-        <button type="submit">Submit</button>
-      </Form>
-    </div>
-  );
-};
+      )}
+      <button type="submit">Submit</button>
+    </Form>
+  </div>
+);
 const FormikLoginForm = withFormik({
   mapPropsToValues({ username, password }) {
     return {
@@ -66,7 +58,6 @@ const FormikLoginForm = withFormik({
       .post('', values)
       // post endpoint of server when ready above
       .then((res) => {
-        // eslint-disable-next-line no-console
         console.log('in login form', res.data);
         setStatus(res.data);
       })

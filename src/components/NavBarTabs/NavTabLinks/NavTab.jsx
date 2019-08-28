@@ -1,10 +1,11 @@
 import React from 'react';
-import { Tabs, Icon } from 'antd';
-import { Route } from "react-router-dom";
+import { Tabs, Icon, Button } from 'antd';
+import { Route, NavLink } from 'react-router-dom';
 import LoginForm from '../../LoginForm';
 import SignupForm from '../../SignupForm';
 import './NavTab.scss';
 import Home from '../../Home/Home';
+import NewTabForm from '../../AddTabButton/NewTabButton';
 
 
 function NavTab(props) {
@@ -17,16 +18,20 @@ function NavTab(props) {
   return (
     <div className="nav-wrapper">
       <Tabs activeKey={props.location.pathname.substring(1)} onTabClick={callback}>
-        <TabPane tab="Home" key="home" className="tab">
+        <TabPane tab="Home" key="home" className="tab home-tab">
           <Route path="/home" component={Home} />
           PlaceHolder
-          </TabPane>
+          <NavLink className="tab" to="/add">
+            <Button type="primary" className="tab tab-btn">Add A Tab</Button>
+          </NavLink>
+        </TabPane>
         <TabPane tab="Log In" key="tab1" className="tab">
           <Route path="/tab1" component={LoginForm} />
         </TabPane>
         <TabPane tab="Sign Up" key="tab2" className="tab">
           <Route path="/tab2" component={SignupForm} />
         </TabPane>
+        {/* <TabPane tab="Add A Tab" key="newtab" className="tab" /> */}
         <TabPane tab="About" key="3" className="tab">
           <h3>About Tabless Thursday</h3>
           <p>

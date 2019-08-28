@@ -10,60 +10,59 @@ const SignupForm = ({
   errors,
   touched,
 }) => (
-  <div className="Signup-Form">
-    <Form>
-      <Field
-        type="text"
-        name="firstname"
-        placeholder="First Name"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.firstname && errors.firstname && (
-        <p className="error">{errors.firstname}</p>
-      )}
-      <Field
-        type="text"
-        name="lastname"
-        placeholder="Last Name"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.lastname && errors.lastname && (
-        <p className="error">{errors.lastname}</p>
-      )}
-      <Field
-        type="text"
-        name="email"
-        placeholder="E-Mail"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.email && errors.email && (
-        <p className="error">{errors.email}</p>
-      )}
-      <Field
-        type="text"
-        name="username"
-        placeholder="Username"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.username && errors.username && (
-        <p className="error">{errors.username}</p>
-      )}
-      <Field
-        type="text"
-        name="password"
-        placeholder="Password"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.password && errors.password && (
-        <p className="error">{errors.password}</p>
-      )}
-      <button type="submit">Submit</button>
-    </Form>
+  <div className="container">
+    <div className="Signup-Form">
+      <h2 className="form-title">Sign Up</h2>
+      <Form>
+        <Field
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          className="field"
+          
+        />
+        {touched.firstname && errors.firstname && (
+          <p className="error">{errors.firstname}</p>
+        )}
+        <Field
+          type="text"
+          name="lastname"
+          placeholder="Last Name"
+          className="field"
+        />
+        {touched.lastname && errors.lastname && (
+          <p className="error">{errors.lastname}</p>
+        )}
+        <Field
+          type="text"
+          name="email"
+          placeholder="E-mail"
+          className="field"
+        />
+        {touched.email && errors.email && (
+          <p className="error">{errors.email}</p>
+        )}
+        <Field
+          type="text"
+          name="username"
+          placeholder="Username"
+          className="field"
+        />
+        {touched.username && errors.username && (
+          <p className="error">{errors.username}</p>
+        )}
+        <Field
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="field"
+        />
+        {touched.password && errors.password && (
+          <p className="error">{errors.password}</p>
+        )}
+        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Register</button>
+      </Form>
+    </div>
   </div>
 );
 const FormikSignupForm = withFormik({

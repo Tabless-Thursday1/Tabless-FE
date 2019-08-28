@@ -29,7 +29,7 @@ const NewTabForm = (props) => {
           // value={}
           onChange={changeHandler}
         />
-        <button type="submit">Add Tab</button>
+        <button onClick={() => {props.hisorty.push('/')}} type="submit">Add Tab</button>
       </Form>
     </div>
   );

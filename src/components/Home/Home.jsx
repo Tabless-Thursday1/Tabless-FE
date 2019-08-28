@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Collapse, Button } from 'antd';
+import axios from 'axios';
 
 import './Home.scss';
 
@@ -24,13 +25,27 @@ const Home = () => {
   const [newGroup, setGroup] = useState([]);
 
   useEffect(() => {
-    const groupedCategories = group(dummyData);
-    setGroup(groupedCategories);
+    axios.get('url placeholder')
+      .then((res) => {
+        const groupedCategories = group(dummyData);
+        setGroup(groupedCategories);
+      })
+      .catch((err) => {
+      console.log(err);
+      });
   }, []);
   const { Panel } = Collapse;
 
   if (newGroup.length === 0) {
     return (<h1>Loading...</h1>);
+  }
+  if (newGroup.length === 1 && newGroup[0].tabs.length === 0) {
+    return (
+      <div className="tabs">
+        <h2>No tabs yet :(</h2>
+        <Button type="primary">Add New Tab</Button>
+      </div>
+    );
   }
   return (
     <div className="tabs">

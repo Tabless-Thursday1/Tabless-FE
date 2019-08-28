@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import LoginForm from '../../LoginForm';
 import SignupForm from '../../SignupForm';
 import './NavTab.scss';
+import Home from '../../Home/Home';
 
 
 function NavTab(props) {
@@ -16,6 +17,10 @@ function NavTab(props) {
   return (
     <div className="nav-wrapper">
       <Tabs activeKey={props.location.pathname.substring(1)} onTabClick={callback}>
+        <TabPane tab="Home" key="home" className="tab">
+          <Route path="/home" component={Home} />
+          PlaceHolder
+          </TabPane>
         <TabPane tab="Log In" key="tab1" className="tab">
           <Route path="/tab1" component={LoginForm} />
         </TabPane>

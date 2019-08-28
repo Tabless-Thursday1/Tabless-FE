@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
@@ -5,62 +6,65 @@ import * as Yup from 'yup';
 
 import './SignupForm.scss';
 
-const SignupForm = ({ errors, touched }) => (
+const SignupForm = ({
+  errors,
+  touched,
+}) => (
   <div className="container">
     <div className="Signup-Form">
-      <h2>Sign Up</h2>
+      <h2 className="form-title">Sign Up</h2>
       <Form>
         <Field
-          className="field"
           type="text"
           name="firstname"
           placeholder="First Name"
+          className="field"
+          
         />
         {touched.firstname && errors.firstname && (
           <p className="error">{errors.firstname}</p>
         )}
         <Field
-          className="field"
           type="text"
           name="lastname"
           placeholder="Last Name"
+          className="field"
         />
         {touched.lastname && errors.lastname && (
           <p className="error">{errors.lastname}</p>
         )}
         <Field
-          className="field"
           type="text"
           name="email"
           placeholder="E-mail"
+          className="field"
         />
         {touched.email && errors.email && (
           <p className="error">{errors.email}</p>
         )}
         <Field
-          className="field"
           type="text"
           name="username"
           placeholder="Username"
+          className="field"
         />
         {touched.username && errors.username && (
           <p className="error">{errors.username}</p>
         )}
         <Field
-          className="field"
           type="password"
           name="password"
           placeholder="Password"
+          className="field"
         />
         {touched.password && errors.password && (
           <p className="error">{errors.password}</p>
         )}
-        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg">Register</button>
+        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Register</button>
       </Form>
     </div>
   </div>
 );
-
 const FormikSignupForm = withFormik({
   mapPropsToValues({
     firstname,

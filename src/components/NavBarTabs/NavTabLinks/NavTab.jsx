@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tabs, Icon } from 'antd';
-
+import { Route } from "react-router-dom";
+import LoginForm from '../../LoginForm';
+import SignupForm from '../../SignupForm';
 import './NavTab.scss';
 
 
@@ -13,28 +15,14 @@ function NavTab(props) {
 
   return (
     <div className="nav-wrapper">
-      <Tabs defaultActiveKey="1" onChange={callback}>
-        <TabPane
-          tab={(
-            <span>
-              <Icon type="folder-open" theme="twoTone" />
-            Your Tabs
-            </span>
-)}
-          key="1"
-          className="your-tabs your"
-        >
-          <h3>We can route our tabs here.</h3>
+      <Tabs activeKey={props.location.pathname.substring(1)} onTabClick={callback}>
+        <TabPane tab="Log In" key="tab1" className="tab">
+          <Route path="/tab1" component={LoginForm} />
         </TabPane>
-        <TabPane tab="Welcome" key="2" className="welcome-tab welcome">
-          <h3>Welcome to Tabless Thursday</h3>
-          <p>
-            Here at Tabless Thursday we strive
-            to make your browser look and feel
-            more organized.
-          </p>
+        <TabPane tab="Sign Up" key="tab2" className="tab">
+          <Route path="/tab2" component={SignupForm} />
         </TabPane>
-        <TabPane tab="About" key="3" className="about-tab about">
+        <TabPane tab="About" key="3" className="tab">
           <h3>About Tabless Thursday</h3>
           <p>
             People often have a million tabs up and lose track of what they were doing.
@@ -45,7 +33,7 @@ function NavTab(props) {
             you left off.
           </p>
         </TabPane>
-        <TabPane tab="Meet The Team" key="4">
+        <TabPane tab="Meet The Team" key="team" className="tab">
           <div className="meet-the-team team">
             <h2>WEB UI DEVELOPER</h2>
             <ul>

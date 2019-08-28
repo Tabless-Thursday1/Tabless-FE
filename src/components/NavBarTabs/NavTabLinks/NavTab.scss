@@ -11,11 +11,19 @@
     }
 
     .home-tab {
-
-        .tab-btn {
-            
-        }
+        //  border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            width: 80%;
     }
+        .tab-btn {
+            // border: 1px solid blue;
+            background-color: #277373;
+            height: 60px;
+            width: 125px;
+            margin-top: 100px;
+            margin-right: 100px;
+        }
 
     .your-tabs {
         // border: 1px solid red;

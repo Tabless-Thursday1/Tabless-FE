@@ -21,9 +21,11 @@ function NavTab(props) {
         <TabPane tab="Home" key="home" className="tab home-tab">
           <Route path="/home" component={Home} />
           PlaceHolder
-          <NavLink className="tab" to="/add">
-            <Button type="primary" className="tab tab-btn">Add A Tab</Button>
-          </NavLink>
+          <div>
+            <NavLink className="tab" to="/add">
+              <Button type="primary" className="tab-btn">Add A Tab</Button>
+            </NavLink>
+          </div>
         </TabPane>
         <TabPane tab="Log In" key="tab1" className="tab">
           <Route path="/tab1" component={LoginForm} />

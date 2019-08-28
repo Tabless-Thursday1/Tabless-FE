@@ -29,8 +29,6 @@ const MainForm = ({
           type="text"
           name="name"
           placeholder="Name"
-          validateOnChange={false}
-          validateOnBlur
         />
         {touched.name && errors.name && (
         <p className="error">{errors.name}</p>
@@ -39,8 +37,6 @@ const MainForm = ({
           type="text"
           name="url"
           placeholder="URL"
-          validateOnChange={false}
-          validateOnBlur
         />
         {touched.url && errors.url && (
         <p className="error">{errors.url}</p>
@@ -49,8 +45,6 @@ const MainForm = ({
           type="text"
           name="description"
           placeholder="Description"
-          validateOnChange={false}
-          validateOnBlur
         />
         {touched.description && errors.description && (
         <p className="error">{errors.description}</p>
@@ -59,8 +53,6 @@ const MainForm = ({
           type="text"
           name="category"
           placeholder="category"
-          validateOnChange={false}
-          validateOnBlur
         />
         {touched.category && errors.category && (
         <p className="error">{errors.category}</p>
@@ -70,8 +62,6 @@ const MainForm = ({
           type="text"
           name="option"
           placeholder="None"
-          validateOnChange={false}
-          validateOnBlur
         >
           <option value="public">Public</option>
           <option value="private">Private</option>
@@ -99,6 +89,10 @@ const FormikMainForm = withFormik({
       edit: edit || false,
     };
   },
+
+  validateOnBlur: false,
+
+  validateOnChange: false,
 
   validationSchema: Yup.object().shape({
     name: Yup.string().required(),

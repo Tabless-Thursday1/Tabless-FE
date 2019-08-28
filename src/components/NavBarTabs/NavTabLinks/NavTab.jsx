@@ -26,8 +26,11 @@ function NavTab(props) {
           <h3>About Tabless Thursday</h3>
           <p>
             People often have a million tabs up and lose track of what they were doing.
-            This website lets you organize them in to-do lists and make a note of why it was important.
-            Makes it easy to pick up where you left off.
+            This website lets you organize
+            them in to-do lists and make a
+            note of why it was important.
+            Makes it easy to pick up where
+            you left off.
           </p>
         </TabPane>
         <TabPane tab="Meet The Team" key="team" className="tab">

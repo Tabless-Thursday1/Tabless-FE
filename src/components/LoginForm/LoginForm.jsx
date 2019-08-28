@@ -19,7 +19,7 @@ const LoginForm = ({
         placeholder="username"
         validateOnChange={false}
         validateOnBlur
-        />
+      />
       {touched.username && errors.username && (
         <p className="error">{errors.username}</p>
       )}
@@ -29,7 +29,7 @@ const LoginForm = ({
         placeholder="password"
         validateOnChange={false}
         validateOnBlur
-        />
+      />
       {touched.password && errors.password && (
         <p className="error">{errors.password}</p>
       )}

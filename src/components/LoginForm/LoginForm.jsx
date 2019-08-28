@@ -11,30 +11,31 @@ const LoginForm = ({
   errors,
   touched,
 }) => (
-  <div className="Login-Form">
-    <Form>
-      <Field
-        type="text"
-        name="username"
-        placeholder="username"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.username && errors.username && (
-        <p className="error">{errors.username}</p>
-      )}
-      <Field
-        type="text"
-        name="password"
-        placeholder="password"
-        validateOnChange={false}
-        validateOnBlur
-      />
-      {touched.password && errors.password && (
-        <p className="error">{errors.password}</p>
-      )}
-      <button type="submit">Submit</button>
-    </Form>
+  <div className="container">
+    <div className="Login-Form">
+      <h2 className="form-title">Welcome Back</h2>
+      <Form>
+        <Field
+          type="text"
+          name="username"
+          placeholder="Username"
+          className="field"
+        />
+        {touched.username && errors.username && (
+          <p className="error">{errors.username}</p>
+        )}
+        <Field
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="field"
+        />
+        {touched.password && errors.password && (
+          <p className="error">{errors.password}</p>
+        )}
+        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Log In</button>
+      </Form>
+    </div>
   </div>
 );
 const FormikLoginForm = withFormik({

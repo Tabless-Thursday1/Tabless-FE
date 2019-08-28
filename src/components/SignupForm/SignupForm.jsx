@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
@@ -5,62 +6,66 @@ import * as Yup from 'yup';
 
 import './SignupForm.scss';
 
-const SignupForm = ({ errors, touched }) => (
-  <div className="container">
-    <div className="Signup-Form">
-      <h2 className="form-title">Sign Up</h2>
-      <Form>
-        <Field
-          className="field"
-          type="text"
-          name="firstname"
-          placeholder="First Name"
-        />
-        {touched.firstname && errors.firstname && (
-          <p className="error">{errors.firstname}</p>
-        )}
-        <Field
-          className="field"
-          type="text"
-          name="lastname"
-          placeholder="Last Name"
-        />
-        {touched.lastname && errors.lastname && (
-          <p className="error">{errors.lastname}</p>
-        )}
-        <Field
-          className="field"
-          type="text"
-          name="email"
-          placeholder="E-mail"
-        />
-        {touched.email && errors.email && (
-          <p className="error">{errors.email}</p>
-        )}
-        <Field
-          className="field"
-          type="text"
-          name="username"
-          placeholder="Username"
-        />
-        {touched.username && errors.username && (
-          <p className="error">{errors.username}</p>
-        )}
-        <Field
-          className="field"
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        {touched.password && errors.password && (
-          <p className="error">{errors.password}</p>
-        )}
-        <button type="submit" className="ant-btn ant-btn-primary ant-btn-lg submit">Register</button>
-      </Form>
-    </div>
+const SignupForm = ({
+  errors,
+  touched,
+}) => (
+  <div className="Signup-Form">
+    <Form>
+      <Field
+        type="text"
+        name="firstname"
+        placeholder="First Name"
+        validateOnChange={false}
+        validateOnBlur
+      />
+      {touched.firstname && errors.firstname && (
+        <p className="error">{errors.firstname}</p>
+      )}
+      <Field
+        type="text"
+        name="lastname"
+        placeholder="Last Name"
+        validateOnChange={false}
+        validateOnBlur
+      />
+      {touched.lastname && errors.lastname && (
+        <p className="error">{errors.lastname}</p>
+      )}
+      <Field
+        type="text"
+        name="email"
+        placeholder="E-Mail"
+        validateOnChange={false}
+        validateOnBlur
+      />
+      {touched.email && errors.email && (
+        <p className="error">{errors.email}</p>
+      )}
+      <Field
+        type="text"
+        name="username"
+        placeholder="Username"
+        validateOnChange={false}
+        validateOnBlur
+      />
+      {touched.username && errors.username && (
+        <p className="error">{errors.username}</p>
+      )}
+      <Field
+        type="text"
+        name="password"
+        placeholder="Password"
+        validateOnChange={false}
+        validateOnBlur
+      />
+      {touched.password && errors.password && (
+        <p className="error">{errors.password}</p>
+      )}
+      <button type="submit">Submit</button>
+    </Form>
   </div>
 );
-
 const FormikSignupForm = withFormik({
   mapPropsToValues({
     firstname,

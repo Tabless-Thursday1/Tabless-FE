@@ -27,6 +27,16 @@ const MainForm = ({
       <Form>
         <Field
           type="text"
+          name="name"
+          placeholder="Name"
+          validateOnChange={false}
+          validateOnBlur
+        />
+        {touched.name && errors.name && (
+        <p className="error">{errors.name}</p>
+        )}
+        <Field
+          type="text"
           name="url"
           placeholder="URL"
           validateOnChange={false}
@@ -76,9 +86,10 @@ const MainForm = ({
 };
 const FormikMainForm = withFormik({
   mapPropsToValues({
-    url, description, option, category, edit, match,
+    name, url, description, option, category, edit, match,
   }) {
     return {
+      name: name || '',
       url: url || '',
       description: description || '',
       option: option || 'Public',
@@ -90,9 +101,10 @@ const FormikMainForm = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    username: Yup.string().required(),
-    password: Yup.string().required(),
-    option: Yup.string(),
+    name: Yup.string().required(),
+    url: Yup.string().required(),
+    description: Yup.string().required(),
+    option: Yup.string().required(),
     category: Yup.string(),
   }),
 

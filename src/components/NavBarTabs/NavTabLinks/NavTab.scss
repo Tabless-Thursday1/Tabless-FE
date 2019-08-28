@@ -6,6 +6,10 @@
 
     height: 10vh;
 
+    .tab {
+        height:93.7vh;
+    }
+
     .your-tabs {
         // border: 1px solid red;
         // height: 5vh;
@@ -88,3 +92,38 @@
    }
  }
 }
+        .meet-the-team {
+        // border: 1px solid red;
+        border-radius: 7px;
+        // height: 5vh;
+
+        background-color: #277373;
+
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3rem;
+        // font-weight: bold;
+        }
+
+        h2 {
+            //  border: 1px solid red;
+            border-radius: 7px;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        
+        ul {
+            // border: 1px solid blue;
+        margin: 10px 0 10px 0;
+            color: black;
+            background-color:#B0D9D5;  
+            font-family: 'Raleway', sans-serif;  
+            font-size: 1.4rem;
+
+        }
+        
+        li:hover {
+            opacity: 0.5;
+        }
+

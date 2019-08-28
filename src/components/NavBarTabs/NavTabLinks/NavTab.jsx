@@ -26,7 +26,7 @@ function NavTab(props) {
         >
           <h3>We can route our tabs here.</h3>
         </TabPane>
-        <TabPane tab="Welcome" key="tab2" className="welcome-tab welcome">
+        <TabPane tab="Welcome" key="2" className="welcome-tab welcome">
           <h3>Welcome to Tabless Thursday</h3>
           <p>
             Here at Tabless Thursday we strive

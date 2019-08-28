@@ -6,22 +6,14 @@ import './App.scss';
 import Home from './components/Home';
 
 // import PrivateRoute from './utils/PrivateRoute';
-<<<<<<< HEAD
-import NavTab from './components/NavBarTabs/NavTabLinks/NavTab';
-import Tab1 from './components/NavTabs/Tab1/tab1';
-import Tab2 from './components/NavTabs/Tab2/tab2';
-import Tab3 from './components/NavTabs/Tab3/tab3';
-import Tab4 from './components/NavTabs/Tab4/tab4';
-=======
-import FormikMainForm from './components/MainForm'
+import FormikMainForm from './components/MainForm/MainForm';
 import FormikLoginForm from './components/LoginForm';
 import FormikSignupForm from './components/SignupForm';
 import NavTab from './components/NavBarTabs/NavTabLinks';
-import Tab1 from './components/NavBarTabs/Tab1/tab1';
-import Tab2 from './components/NavBarTabs/Tab2/tab2';
-import Tab3 from './components/NavBarTabs/Tab3/tab3';
-import Tab4 from './components/NavBarTabs/Tab4/tab4';
->>>>>>> dafc69d59763feee32f769ec6cb2ce188c34eaad
+// import Tab1 from './components/NavBarTabs/Tab1/tab1';
+// import Tab2 from './components/NavBarTabs/Tab2/tab2';
+// import Tab3 from './components/NavBarTabs/Tab3/tab3';
+// import Tab4 from './components/NavBarTabs/NavTabLinks/NavTab';
 import WelcomePage from './components/NavBarTabs/HomePage/HomePage';
 import MainForm from './components/MainForm';
 
@@ -30,11 +22,11 @@ function App() {
     <Router>
       <div className="app">
         <Route path="/" component={NavTab} />
-        <Route exact path="/" component={WelcomePage} />
-        <Route path="/tab1" component={FormikLoginForm} />
-        <Route path="/tab2" component={FormikSignupForm} />
-        <Route path="/tab3" component={Home} />
-        <Route path="/tab4" component={Tab4} />
+        {/* <Route exact path="/" component={WelcomePage} /> */}
+        <Route path="/welcomeback" component={FormikLoginForm} />
+        <Route path="/signup" component={FormikSignupForm} />
+        <Route exact path="/1" component={Home} />
+        {/* <Route path="/tab4" component={Tab4} /> */}
         <Route path="/edit/:tabId" render={() => <FormikMainForm edit />} />
         <Route path="/add" component={FormikMainForm} />
         {/* <ul>

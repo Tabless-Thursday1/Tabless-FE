@@ -3,76 +3,101 @@
 .nav-wrapper {
     text-align: center;
     font-size: 1.4rem;
-
     height: 6.3vh;
 
-    .tab {
-        height:93.7vh;
+.tab {
+    height:93.7vh;
+}
+
+.home-tab {
+    //  border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color: #277373;
+    
+}
+.tab-btn {
+    // border: 1px solid blue;
+    background-color: #B0D9D5;
+    height: 60px;
+    width: 125px;
+    margin-top: 70px;
+    margin-right: 100px;
+    color: black;
+}
+.tab-btn:hover {
+    opacity: 0.5;
+}
+
+.your-tabs {
+    // border: 1px solid red;
+    // height: 5vh;
+    background-color: #4EA6A6;
+
+h3 {
+    font-size: 3rem; 
+}
+p {
+    font-size: 2rem;
+    color: white;
     }
+}
 
-    .home-tab {
-        //  border: 1px solid red;
-            display: flex;
-            justify-content: center;
-            width: 80%;
+.about-tab {
+    // border: 1px solid red;
+    height: 93.6vh;
+    background-color: #4EA6A6;
+    flex-wrap: wrap;
+
+h3 {
+    font-size: 3rem;
+}
+p {
+    font-size: 2rem;
+    color: white;
+}
+
+.tab {
+    height:93.7vh;
+}
+
+.meet-the-team {
+    // border: 1px solid red;
+    border-radius: 7px;
+    height: 93.6vh;
+
+    background-color: #277373;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    // font-weight: bold;
+}
+
+h2 {
+    //  border: 1px solid red;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+ul {
+    // border: 1px solid blue;
+    margin: 10px 0 10px 0;
+    color: black;
+    background-color:#B0D9D5;  
+    font-family: 'Raleway', sans-serif;  
+    font-size: 1.4rem;
+}
+
+li:hover {
+     opacity: 0.5;
+     }
     }
-        .tab-btn {
-            // border: 1px solid blue;
-            background-color: #277373;
-            height: 60px;
-            width: 125px;
-            margin-top: 100px;
-            margin-right: 100px;
-        }
-
-    .your-tabs {
-        // border: 1px solid red;
-        // height: 5vh;
-
-        background-color: #4EA6A6;
-
-        h3 {
-            font-size: 3rem; 
-        }
-        p {
-            font-size: 2rem;
-            color: white;
-        }
-    }
-
-    .welcome-tab {
-        // border: 1px solid red;
-        // height: 5vh;
-        background-color: #4EA6A6;
-
-        h3 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 2rem;
-            color: white;
-        }
-    }
-
-    .about-tab {
-        // border: 1px solid red;
-        // height: 5vh;
-        background-color: #4EA6A6;
-        flex-wrap: wrap;
-
-        h3 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 2rem;
-            color: white;
-        }
-      
-    .tab {
-        height:93.7vh;
-    }
-
-    .meet-the-team {
+}
+.meet-the-team {
     // border: 1px solid red;
     border-radius: 7px;
     // height: 5vh;
@@ -82,63 +107,26 @@
     font-family: 'Raleway', sans-serif;
     font-size: 1.3rem;
     // font-weight: bold;
- }
+}
 
- h2 {
+h2 {
     //  border: 1px solid red;
-     border-radius: 7px;
-     display: flex;
-     justify-content: space-around;
-     align-content: center;
-     flex-wrap: wrap;
- }
- 
- ul {
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+ul {
     // border: 1px solid blue;
-   margin: 10px 0 10px 0;
+    margin: 10px 0 10px 0;
     color: black;
     background-color:#B0D9D5;  
     font-family: 'Raleway', sans-serif;  
     font-size: 1.4rem;
- }
-
- li:hover {
-     opacity: 0.5;
-   }
- }
 }
-        .meet-the-team {
-        // border: 1px solid red;
-        border-radius: 7px;
-        // height: 5vh;
 
-        background-color: #277373;
-
-        font-family: 'Raleway', sans-serif;
-        font-size: 1.3rem;
-        // font-weight: bold;
-        }
-
-        h2 {
-            //  border: 1px solid red;
-            border-radius: 7px;
-            display: flex;
-            justify-content: space-around;
-            align-content: center;
-            flex-wrap: wrap;
-        }
-        
-        ul {
-            // border: 1px solid blue;
-        margin: 10px 0 10px 0;
-            color: black;
-            background-color:#B0D9D5;  
-            font-family: 'Raleway', sans-serif;  
-            font-size: 1.4rem;
-
-        }
-        
-        li:hover {
-            opacity: 0.5;
-        }
-
+li:hover {
+    opacity: 0.5;
+}

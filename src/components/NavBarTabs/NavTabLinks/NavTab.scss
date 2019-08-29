@@ -4,11 +4,26 @@
     text-align: center;
     font-size: 1.4rem;
 
-    height: 10vh;
+    height: 6.3vh;
 
     .tab {
         height:93.7vh;
     }
+
+    .home-tab {
+        //  border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            width: 80%;
+    }
+        .tab-btn {
+            // border: 1px solid blue;
+            background-color: #277373;
+            height: 60px;
+            width: 125px;
+            margin-top: 100px;
+            margin-right: 100px;
+        }
 
     .your-tabs {
         // border: 1px solid red;
@@ -52,7 +67,46 @@
             font-size: 2rem;
             color: white;
         }
+      
+    .tab {
+        height:93.7vh;
+    }
 
+    .meet-the-team {
+    // border: 1px solid red;
+    border-radius: 7px;
+    // height: 5vh;
+
+    background-color: #277373;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    // font-weight: bold;
+ }
+
+ h2 {
+    //  border: 1px solid red;
+     border-radius: 7px;
+     display: flex;
+     justify-content: space-around;
+     align-content: center;
+     flex-wrap: wrap;
+ }
+ 
+ ul {
+    // border: 1px solid blue;
+   margin: 10px 0 10px 0;
+    color: black;
+    background-color:#B0D9D5;  
+    font-family: 'Raleway', sans-serif;  
+    font-size: 1.4rem;
+ }
+
+ li:hover {
+     opacity: 0.5;
+   }
+ }
+}
         .meet-the-team {
         // border: 1px solid red;
         border-radius: 7px;
@@ -87,5 +141,4 @@
         li:hover {
             opacity: 0.5;
         }
-    }
-}
+

@@ -7,6 +7,7 @@ import Home from './components/Home';
 
 // import PrivateRoute from './utils/PrivateRoute';
 import FormikMainForm from './components/MainForm/MainForm';
+import NewTabButton from './components/AddTabButton/NewTabButton';
 import FormikLoginForm from './components/LoginForm';
 import FormikSignupForm from './components/SignupForm';
 import NavTab from './components/NavBarTabs/NavTabLinks';
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <div className="app">
         <Route path="/" component={NavTab} />
+        {/* <Route path="/home" component={NewTabButton} /> */}
         <Route path="/edit/:tabId" render={() => <FormikMainForm edit />} />
         <Route path="/add" component={FormikMainForm} />
       </div>

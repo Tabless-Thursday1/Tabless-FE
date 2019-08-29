@@ -5,7 +5,7 @@ import LoginForm from '../../LoginForm';
 import SignupForm from '../../SignupForm';
 import './NavTab.scss';
 import Home from '../../Home/Home';
-import NewTabForm from '../../AddTabButton/NewTabButton';
+import NewTabForm from '../../NavBarTabs/NavTabLinks/';
 
 
 function NavTab(props) {
@@ -34,7 +34,7 @@ function NavTab(props) {
           <Route path="/tab2" component={SignupForm} />
         </TabPane>
         {/* <TabPane tab="Add A Tab" key="newtab" className="tab" /> */}
-        <TabPane tab="About" key="3" className="tab">
+        <TabPane tab="About" key="3" className="about-tab">
           <h3>About Tabless Thursday</h3>
           <p>
             People often have a million tabs up and lose track of what they were doing.

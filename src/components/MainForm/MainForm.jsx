@@ -26,7 +26,7 @@ const MainForm = ({
     <div className="Main-Form">
       <div className="addTabForm">
         <Form>
-          <h1 className="form-title">Add/Edit Your Tab Below</h1>
+          <h1 className="form-title">Add Your Tab Below</h1>
           <Field
             type="text"
             name="name"

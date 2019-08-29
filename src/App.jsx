@@ -7,7 +7,7 @@ import Home from './components/Home';
 
 // import PrivateRoute from './utils/PrivateRoute';
 import FormikMainForm from './components/MainForm/MainForm';
-import NewTabButton from './components/AddTabButton/NewTabButton';
+// import NewTabButton from './components/NavBarTabs/NavTabLinks';
 import FormikLoginForm from './components/LoginForm';
 import FormikSignupForm from './components/SignupForm';
 import NavTab from './components/NavBarTabs/NavTabLinks';

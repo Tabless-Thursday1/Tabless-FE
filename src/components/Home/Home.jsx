@@ -26,6 +26,7 @@ const Home = () => {
   const [newGroup, setGroup] = useState([]);
 
   useEffect(() => {
+    let dummyData = [];
     const groupedCategories = group(dummyData);
     setGroup(groupedCategories);
     // axios.get('url placeholder')

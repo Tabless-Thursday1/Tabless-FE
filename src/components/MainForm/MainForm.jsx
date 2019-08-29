@@ -124,6 +124,7 @@ const FormikMainForm = withFormik({
       .then((res) => {
         console.log('in login form', res.data);
         setStatus(res.data);
+        resetForm();
       })
       .catch((err) => console.log(err.response));
   }

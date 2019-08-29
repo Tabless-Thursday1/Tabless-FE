@@ -24,53 +24,66 @@ const MainForm = ({
   // };
   return (
     <div className="Main-Form">
-      <Form>
-        <Field
-          type="text"
-          name="name"
-          placeholder="Name"
-        />
-        {touched.name && errors.name && (
-        <p className="error">{errors.name}</p>
-        )}
-        <Field
-          type="text"
-          name="url"
-          placeholder="URL"
-        />
-        {touched.url && errors.url && (
-        <p className="error">{errors.url}</p>
-        )}
-        <Field
-          type="text"
-          name="description"
-          placeholder="Description"
-        />
-        {touched.description && errors.description && (
-        <p className="error">{errors.description}</p>
-        )}
-        <Field
-          type="text"
-          name="category"
-          placeholder="category"
-        />
-        {touched.category && errors.category && (
-        <p className="error">{errors.category}</p>
-        )}
-        <Field
-          component="select"
-          type="text"
-          name="option"
-          placeholder="None"
-        >
-          <option value="public">Public</option>
-          <option value="private">Private</option>
-        </Field>
-        {touched.option && errors.option && (
-        <p className="error">{errors.option}</p>
-        )}
-        <button type="submit">Submit</button>
-      </Form>
+      <div className="addTabForm">
+        <Form>
+          <h1 className="form-title">Add/Edit Your Tab Below</h1>
+          <Field
+            type="text"
+            name="name"
+            placeholder="Name"
+            className="field"
+          />
+          {touched.name && errors.name && (
+          <p className="error">{errors.name}</p>
+          )}
+          <Field
+            type="text"
+            name="url"
+            placeholder="URL"
+            className="field"
+          />
+          {touched.url && errors.url && (
+          <p className="error">{errors.url}</p>
+          )}
+          <Field
+            type="text"
+            name="description"
+            placeholder="Description"
+            className="field"
+          />
+          {touched.description && errors.description && (
+          <p className="error">{errors.description}</p>
+          )}
+          <Field
+            type="text"
+            name="category"
+            placeholder="category"
+            className="field"
+          />
+          {touched.category && errors.category && (
+          <p className="error">{errors.category}</p>
+          )}
+          <Field
+            component="select"
+            type="text"
+            name="option"
+            placeholder="None"
+            classname="field"
+          >
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </Field>
+          {touched.option && errors.option && (
+          <p className="error">{errors.option}</p>
+          )}
+          <button
+            type="submit" 
+            className="ant-btn ant-btn-primary ant-btn-lg submit"
+          >
+            Submit
+          </button>
+        </Form>
+      </div>
     </div>
   );
 };

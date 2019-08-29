@@ -10,22 +10,22 @@ import NewTabForm from '../../NavBarTabs/NavTabLinks/';
 
 function NavTab(props) {
   const { TabPane } = Tabs;
-
+  let {location} = props;
+  let newLocation = "/home";
+  if (location.pathname === "/add") {
+    newLocation = "/home";
+  } else {
+    newLocation = location.pathname;
+  }
   function callback(key) {
     props.history.push(`/${key}`);
   }
 
   return (
     <div className="nav-wrapper">
-      <Tabs activeKey={props.location.pathname.substring(1)} onTabClick={callback}>
+      <Tabs activeKey={newLocation.substring(1)} onTabClick={callback}>
         <TabPane tab="Home" key="home" className="tab home-tab">
           <Route path="/home" component={Home} />
-          PlaceHolder
-          <div>
-            <NavLink className="tab" to="/add">
-              <Button type="primary" className="tab-btn">Add A Tab</Button>
-            </NavLink>
-          </div>
         </TabPane>
         <TabPane tab="Log In" key="tab1" className="tab">
           <Route path="/tab1" component={LoginForm} />

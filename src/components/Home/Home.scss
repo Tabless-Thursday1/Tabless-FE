@@ -3,8 +3,11 @@
     display:flex;
     width:80%;
     margin:auto;
-    position:absolute;
-    top: 20%;
+
+}
+.tab-container {
+    background-color: #277373;
+    width:100%;
 }
 .category-card {
     width:35%;
@@ -44,3 +47,6 @@
     }
 }
 
+.tab-link {
+    text-align:left;
+}

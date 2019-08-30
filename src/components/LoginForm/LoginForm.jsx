@@ -13,7 +13,6 @@ const LoginForm = ({
   errors, touched,
 }) => (
   <div className="container">
-    {/* {console.log(JSON.stringify(rest))} */}
     <div className="Login-Form">
       <h2 className="form-title">Welcome Back</h2>
       <Form>
@@ -59,7 +58,7 @@ const FormikLoginForm = withFormik({
   handleSubmit: async (values, { props, resetForm }) => {
     const { login } = props;
 
-    const result = await login({ url: 'https://asdf.com', query: '/login', data: values });
+    const result = await login({ data: values });
     if (!result.error) {
       resetForm();
       // redirect the user because they are now logged in

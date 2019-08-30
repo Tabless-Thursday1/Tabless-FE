@@ -7,6 +7,8 @@ const POST = 'post';
 const PUT = 'put';
 const DELETE = 'delete';
 
+const mainUrl = 'https://exampleurl.com';
+
 export const EXAMPLE_TYPE = 'EXAMPLE_TYPE';
 export const POST_LOGIN_START = 'POST_LOGIN_START';
 export const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS';
@@ -33,8 +35,8 @@ export const exampleFunction = () => ({
 });
 
 const buildThunkFactory = ({ restFunction }) => ({
-  restCallType, start, success, failure,
-}) => ({ url, query, data }) => async (dispatch) => {
+  restCallType, start, success, failure, url, query,
+}) => ({ data }) => async (dispatch) => {
   dispatch({ type: start });
   try {
     const response = await restFunction()[restCallType](`${url}${query}`, data);
@@ -54,6 +56,8 @@ export const postLogin = buildAxiosThunk({
   start: POST_LOGIN_START,
   success: POST_LOGIN_SUCCESS,
   failure: POST_LOGIN_FAILURE,
+  url: mainUrl,
+  query: '/login',
 });
 
 export const postSignup = buildAxiosThunk({
@@ -61,6 +65,8 @@ export const postSignup = buildAxiosThunk({
   start: POST_SIGNUP_START,
   success: POST_SIGNUP_SUCCESS,
   failure: POST_SIGNUP_FAILURE,
+  url: mainUrl,
+  query: '/signup',
 });
 
 export const getTabs = buildAxiosWithAuthThunk({
@@ -68,6 +74,8 @@ export const getTabs = buildAxiosWithAuthThunk({
   start: GET_TABS_START,
   success: GET_TABS_SUCCESS,
   failure: GET_TABS_FAILURE,
+  url: mainUrl,
+  query: '/tabs',
 });
 
 export const addTab = buildAxiosWithAuthThunk({
@@ -75,6 +83,8 @@ export const addTab = buildAxiosWithAuthThunk({
   start: ADD_TAB_START,
   success: ADD_TAB_SUCCESS,
   failure: ADD_TAB_FAILURE,
+  url: mainUrl,
+  query: '/tabs',
 });
 
 export const updateTab = buildAxiosWithAuthThunk({
@@ -82,6 +92,8 @@ export const updateTab = buildAxiosWithAuthThunk({
   start: UPDATE_TAB_START,
   success: UPDATE_TAB_SUCCESS,
   failure: UPDATE_TAB_FAILURE,
+  url: mainUrl,
+  query: '/tabs',
 });
 
 export const removeTab = buildAxiosWithAuthThunk({
@@ -89,4 +101,6 @@ export const removeTab = buildAxiosWithAuthThunk({
   start: REMOVE_TAB_START,
   success: REMOVE_TAB_SUCCESS,
   failure: REMOVE_TAB_FAILURE,
+  url: mainUrl,
+  query: '/tabs',
 });

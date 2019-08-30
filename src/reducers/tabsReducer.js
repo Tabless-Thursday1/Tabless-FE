@@ -70,13 +70,13 @@ export const reducer = (state = initialState, { type, payload }) => {
         errorLoggingIn: false,
       };
     case POST_LOGIN_SUCCESS:
+      localStorage.setItem('token', payload);
       return {
         ...state,
         sendingLogin: false,
         errorLoggingIn: false,
       };
     case POST_LOGIN_FAILURE:
-      localStorage.setItem('token', payload);
       return {
         ...state,
         sendingLogin: false,

@@ -7,6 +7,8 @@ const POST = 'post';
 const PUT = 'put';
 const DELETE = 'delete';
 
+const mainUrl = 'https://exampleurl.com';
+
 export const EXAMPLE_TYPE = 'EXAMPLE_TYPE';
 export const POST_LOGIN_START = 'POST_LOGIN_START';
 export const POST_LOGIN_SUCCESS = 'POST_LOGIN_SUCCESS';
@@ -32,9 +34,9 @@ export const exampleFunction = () => ({
   payload: 'Example Payload',
 });
 
-const buildThunkFactory = ({ restFunction }) => ({
+const buildThunkFactory = ({ restFunction }) => ({ url, query }) => ({
   restCallType, start, success, failure,
-}) => ({ url, query, data }) => async (dispatch) => {
+}) => ({ data }) => async (dispatch) => {
   dispatch({ type: start });
   try {
     const response = await restFunction()[restCallType](`${url}${query}`, data);
@@ -49,42 +51,40 @@ const buildThunkFactory = ({ restFunction }) => ({
 const buildAxiosThunk = buildThunkFactory({ restFunction: () => Axios });
 const buildAxiosWithAuthThunk = buildThunkFactory({ restFunction: axiosWithAuth });
 
-export const postLogin = buildAxiosThunk({
+export const postLogin = buildAxiosThunk({ url: mainUrl, query: '/login' })({
   restCallType: POST,
   start: POST_LOGIN_START,
   success: POST_LOGIN_SUCCESS,
   failure: POST_LOGIN_FAILURE,
 });
 
-export const postSignup = buildAxiosThunk({
+export const postSignup = buildAxiosThunk({ url: mainUrl, query: '/signup' })({
   restCallType: POST,
   start: POST_SIGNUP_START,
   success: POST_SIGNUP_SUCCESS,
   failure: POST_SIGNUP_FAILURE,
 });
 
-export const getTabs = buildAxiosWithAuthThunk({
+const tabsEndpoint = buildAxiosWithAuthThunk({ url: mainUrl, query: '/tabs' });
+export const getTabs = tabsEndpoint({
   restCallType: GET,
   start: GET_TABS_START,
   success: GET_TABS_SUCCESS,
   failure: GET_TABS_FAILURE,
 });
-
-export const addTab = buildAxiosWithAuthThunk({
+export const addTab = tabsEndpoint({
   restCallType: POST,
   start: ADD_TAB_START,
   success: ADD_TAB_SUCCESS,
   failure: ADD_TAB_FAILURE,
 });
-
-export const updateTab = buildAxiosWithAuthThunk({
+export const updateTab = tabsEndpoint({
   restCallType: PUT,
   start: UPDATE_TAB_START,
   success: UPDATE_TAB_SUCCESS,
   failure: UPDATE_TAB_FAILURE,
 });
-
-export const removeTab = buildAxiosWithAuthThunk({
+export const removeTab = tabsEndpoint({
   restCallType: DELETE,
   start: REMOVE_TAB_START,
   success: REMOVE_TAB_SUCCESS,

@@ -33,20 +33,17 @@ export const exampleFunction = () => ({
 });
 
 const buildThunkFactory = ({ restFunction }) => ({
-  restCallType,
-  start,
-  success,
-  failure,
-}) => ({ url, query, data }) => (dispatch) => {
-  (async () => {
-    dispatch({ type: start });
-    try {
-      const response = await restFunction()[restCallType](`${url}${query}`, data);
-      dispatch({ type: success, payload: response.data });
-    } catch (error) {
-      dispatch({ type: failure, payload: error.response });
-    }
-  })();
+  restCallType, start, success, failure,
+}) => ({ url, query, data }) => async (dispatch) => {
+  dispatch({ type: start });
+  try {
+    const response = await restFunction()[restCallType](`${url}${query}`, data);
+    dispatch({ type: success, payload: response.data });
+    return { error: false, response };
+  } catch (error) {
+    dispatch({ type: failure, payload: error.response });
+    return { error: true, response: error.response };
+  }
 };
 
 const buildAxiosThunk = buildThunkFactory({ restFunction: () => Axios });

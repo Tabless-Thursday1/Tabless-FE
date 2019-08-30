@@ -51,6 +51,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         errorSigningUp: false,
       };
     case POST_SIGNUP_SUCCESS:
+      localStorage.setItem('token', payload);
       return {
         ...state,
         sendingSignup: false,
@@ -75,6 +76,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         errorLoggingIn: false,
       };
     case POST_LOGIN_FAILURE:
+      localStorage.setItem('token', payload);
       return {
         ...state,
         sendingLogin: false,
@@ -91,6 +93,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         loadingTabs: false,
         errorLoadingTabs: false,
+        tabs: payload,
       };
     case GET_TABS_FAILURE:
       return {
@@ -103,13 +106,13 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         sendingTabData: true,
         errorSendingTab: false,
-        // tabs: [...state.tabs, payload],
       };
     case ADD_TAB_SUCCESS:
       return {
         ...state,
         sendingTabData: false,
         errorSendingTab: false,
+        tabs: [...state.tabs, payload],
       };
     case ADD_TAB_FAILURE:
       return {
@@ -128,6 +131,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         sendingTabData: false,
         errorSendingTab: false,
+        tabs: state.tabs.map((tab) => (tab.id === payload.id ? payload : tab)),
       };
     case UPDATE_TAB_FAILURE:
       return {
@@ -146,6 +150,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         deletingTab: false,
         errorDeletingTab: false,
+        tabs: state.tabs.filter((tab) => tab.id !== payload.id),
       };
     case REMOVE_TAB_FAILURE:
       return {

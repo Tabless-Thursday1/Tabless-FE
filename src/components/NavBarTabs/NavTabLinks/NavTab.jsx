@@ -14,6 +14,8 @@ function NavTab(props) {
   let newLocation = "/home";
   if (location.pathname === "/add") {
     newLocation = "/home";
+  } else if (location.pathname === "/") {
+    newLocation = "/tab2";
   } else {
     newLocation = location.pathname;
   }

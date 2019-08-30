@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 
 import './MainForm.scss';
+
+import { addTab, updateTab } from '../../actions';
 
 const MainForm = ({
   errors,
@@ -87,6 +89,7 @@ const MainForm = ({
     </div>
   );
 };
+
 const FormikMainForm = withFormik({
   mapPropsToValues({
     name, url, description, option, category, edit, match,
@@ -115,21 +118,21 @@ const FormikMainForm = withFormik({
     category: Yup.string(),
   }),
 
-  handleSubmit(values, { setStatus, event, resetForm }) {
+  handleSubmit: async (values, { setStatus, event, resetForm }) => {
     event.preventDefault();
-    const restCallType = values.edit === true ? 'put' : 'post';
+    const actionCreator = values.edit === true ? values : 'post';
     const { tabId } = values;
-    axios[restCallType]('', values)
-      // put endpoint of server when ready above
-      .then((res) => {
-        console.log('in login form', res.data);
-        setStatus(res.data);
-        resetForm();
-      })
-      .catch((err) => console.log(err.response));
+    // axios[restCallType]('', values)
+    //   // put endpoint of server when ready above
+    //   .then((res) => {
+    //     console.log('in login form', res.data);
+    //     setStatus(res.data);
+    //     resetForm();
+    //   })
+    //   .catch((err) => console.log(err.response));
   }
   ,
 
 })(MainForm);
 
-export default FormikMainForm;
+export default connect(null, { add: addTab, update: updateTab })(FormikMainForm);

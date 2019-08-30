@@ -1,17 +1,19 @@
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { connect } from 'react-redux';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 
 import './LoginForm.scss';
 
+import { postLogin } from '../../actions';
+
 const LoginForm = ({
-  errors,
-  touched,
+  errors, touched,
 }) => (
   <div className="container">
+    {/* {console.log(JSON.stringify(rest))} */}
     <div className="Login-Form">
       <h2 className="form-title">Welcome Back</h2>
       <Form>
@@ -38,13 +40,13 @@ const LoginForm = ({
     </div>
   </div>
 );
+
 const FormikLoginForm = withFormik({
-  mapPropsToValues({ username, password }) {
-    return {
-      username: username || '',
-      password: password || '',
-    };
-  },
+  mapPropsToValues: ({ username, password }) => ({
+    username: username || '',
+    password: password || '',
+  }),
+
   validateOnChange: false,
 
   validateOnBlur: false,
@@ -54,16 +56,15 @@ const FormikLoginForm = withFormik({
     password: Yup.string().required('Password is a required field.'),
   }),
 
-  handleSubmit(values, { setStatus }) {
-    axios
-      .post('', values)
-      // post endpoint of server when ready above
-      .then((res) => {
-        console.log('in login form', res.data);
-        setStatus(res.data);
-      })
-      .catch((err) => console.log(err.response));
+  handleSubmit: async (values, { props, resetForm }) => {
+    const { login } = props;
+
+    const result = await login({ url: 'https://asdf.com', query: '/login', data: values });
+    if (!result.error) {
+      resetForm();
+      // redirect the user because they are now logged in
+    }
   },
 })(LoginForm);
 
-export default FormikLoginForm;
+export default connect(null, { login: postLogin })(FormikLoginForm);

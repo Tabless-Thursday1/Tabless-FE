@@ -34,8 +34,8 @@ export const exampleFunction = () => ({
   payload: 'Example Payload',
 });
 
-const buildThunkFactory = ({ restFunction }) => ({
-  restCallType, start, success, failure, url, query,
+const buildThunkFactory = ({ restFunction }) => ({ url, query }) => ({
+  restCallType, start, success, failure,
 }) => ({ data }) => async (dispatch) => {
   dispatch({ type: start });
   try {
@@ -51,56 +51,42 @@ const buildThunkFactory = ({ restFunction }) => ({
 const buildAxiosThunk = buildThunkFactory({ restFunction: () => Axios });
 const buildAxiosWithAuthThunk = buildThunkFactory({ restFunction: axiosWithAuth });
 
-export const postLogin = buildAxiosThunk({
+export const postLogin = buildAxiosThunk({ url: mainUrl, query: '/login' })({
   restCallType: POST,
   start: POST_LOGIN_START,
   success: POST_LOGIN_SUCCESS,
   failure: POST_LOGIN_FAILURE,
-  url: mainUrl,
-  query: '/login',
 });
 
-export const postSignup = buildAxiosThunk({
+export const postSignup = buildAxiosThunk({ url: mainUrl, query: '/signup' })({
   restCallType: POST,
   start: POST_SIGNUP_START,
   success: POST_SIGNUP_SUCCESS,
   failure: POST_SIGNUP_FAILURE,
-  url: mainUrl,
-  query: '/signup',
 });
 
-export const getTabs = buildAxiosWithAuthThunk({
+const tabsEndpoint = buildAxiosWithAuthThunk({ url: mainUrl, query: '/tabs' });
+export const getTabs = tabsEndpoint({
   restCallType: GET,
   start: GET_TABS_START,
   success: GET_TABS_SUCCESS,
   failure: GET_TABS_FAILURE,
-  url: mainUrl,
-  query: '/tabs',
 });
-
-export const addTab = buildAxiosWithAuthThunk({
+export const addTab = tabsEndpoint({
   restCallType: POST,
   start: ADD_TAB_START,
   success: ADD_TAB_SUCCESS,
   failure: ADD_TAB_FAILURE,
-  url: mainUrl,
-  query: '/tabs',
 });
-
-export const updateTab = buildAxiosWithAuthThunk({
+export const updateTab = tabsEndpoint({
   restCallType: PUT,
   start: UPDATE_TAB_START,
   success: UPDATE_TAB_SUCCESS,
   failure: UPDATE_TAB_FAILURE,
-  url: mainUrl,
-  query: '/tabs',
 });
-
-export const removeTab = buildAxiosWithAuthThunk({
+export const removeTab = tabsEndpoint({
   restCallType: DELETE,
   start: REMOVE_TAB_START,
   success: REMOVE_TAB_SUCCESS,
   failure: REMOVE_TAB_FAILURE,
-  url: mainUrl,
-  query: '/tabs',
 });
